@@ -14,6 +14,7 @@
 		C33D8C132543640300CEE37D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C122543640300CEE37D /* Assets.xcassets */; };
 		C33D8C162543640300CEE37D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C142543640300CEE37D /* LaunchScreen.storyboard */; };
 		C33D8C242543643D00CEE37D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33D8C232543643D00CEE37D /* CloudKit.framework */; };
+		C33D8C362543663D00CEE37D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C352543663D00CEE37D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		C33D8C172543640300CEE37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C33D8C212543643900CEE37D /* ChangeYourMindset.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChangeYourMindset.entitlements; sourceTree = "<group>"; };
 		C33D8C232543643D00CEE37D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C33D8C352543663D00CEE37D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		C33D8C2E254364CB00CEE37D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C33D8C352543663D00CEE37D /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33D8C362543663D00CEE37D /* User.swift in Sources */,
 				C33D8C0E2543640300CEE37D /* ViewController.swift in Sources */,
 				C33D8C0A2543640300CEE37D /* AppDelegate.swift in Sources */,
 				C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */,
