@@ -15,6 +15,8 @@
 		C33D8C162543640300CEE37D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C142543640300CEE37D /* LaunchScreen.storyboard */; };
 		C33D8C242543643D00CEE37D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33D8C232543643D00CEE37D /* CloudKit.framework */; };
 		C33D8C362543663D00CEE37D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C352543663D00CEE37D /* User.swift */; };
+		C3F58D8425473AC3002BF456 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D8325473AC3002BF456 /* UserController.swift */; };
+		C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D8625473C5D002BF456 /* MindsetError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		C33D8C212543643900CEE37D /* ChangeYourMindset.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChangeYourMindset.entitlements; sourceTree = "<group>"; };
 		C33D8C232543643D00CEE37D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C33D8C352543663D00CEE37D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C3F58D8325473AC3002BF456 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		C3F58D8625473C5D002BF456 /* MindsetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindsetError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,7 @@
 				C33D8C2E254364CB00CEE37D /* Models */,
 				C33D8C2B254364AD00CEE37D /* Controllers */,
 				C33D8C282543649000CEE37D /* Views */,
-				C33D8C272543648400CEE37D /* Helpers+Functions */,
+				C33D8C272543648400CEE37D /* Helpers+Extensions */,
 				C33D8C1E2543641000CEE37D /* Resources */,
 			);
 			path = ChangeYourMindset;
@@ -93,11 +97,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C33D8C272543648400CEE37D /* Helpers+Functions */ = {
+		C33D8C272543648400CEE37D /* Helpers+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C3F58D8625473C5D002BF456 /* MindsetError.swift */,
 			);
-			path = "Helpers+Functions";
+			path = "Helpers+Extensions";
 			sourceTree = "<group>";
 		};
 		C33D8C282543649000CEE37D /* Views */ = {
@@ -144,6 +149,7 @@
 		C33D8C2D254364BE00CEE37D /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C3F58D8325473AC3002BF456 /* UserController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -228,8 +234,10 @@
 			files = (
 				C33D8C362543663D00CEE37D /* User.swift in Sources */,
 				C33D8C0E2543640300CEE37D /* ViewController.swift in Sources */,
+				C3F58D8425473AC3002BF456 /* UserController.swift in Sources */,
 				C33D8C0A2543640300CEE37D /* AppDelegate.swift in Sources */,
 				C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */,
+				C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
