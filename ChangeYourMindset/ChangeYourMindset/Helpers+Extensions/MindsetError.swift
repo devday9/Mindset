@@ -16,7 +16,7 @@ enum MindsetError: LocalizedError {
         case .ckError(let error):
             return "There was an error: \(error.localizedDescription)"
         case .couldNotUnwrap:
-            return "Unable to unwrap"
+            return "Unable to unwrap."
         }
     }
 }
