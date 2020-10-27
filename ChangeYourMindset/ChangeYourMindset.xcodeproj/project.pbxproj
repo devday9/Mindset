@@ -17,6 +17,9 @@
 		C33D8C362543663D00CEE37D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C352543663D00CEE37D /* User.swift */; };
 		C3F58D8425473AC3002BF456 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D8325473AC3002BF456 /* UserController.swift */; };
 		C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D8625473C5D002BF456 /* MindsetError.swift */; };
+		C3F58D9225474BB7002BF456 /* CurrentDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9125474BB7002BF456 /* CurrentDay.swift */; };
+		C3F58D9925477D64002BF456 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9825477D64002BF456 /* Task.swift */; };
+		C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9C25478C25002BF456 /* Challenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		C33D8C352543663D00CEE37D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3F58D8325473AC3002BF456 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		C3F58D8625473C5D002BF456 /* MindsetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindsetError.swift; sourceTree = "<group>"; };
+		C3F58D9125474BB7002BF456 /* CurrentDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDay.swift; sourceTree = "<group>"; };
+		C3F58D9825477D64002BF456 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		C3F58D9C25478C25002BF456 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				C33D8C352543663D00CEE37D /* User.swift */,
+				C3F58D9825477D64002BF456 /* Task.swift */,
+				C3F58D9C25478C25002BF456 /* Challenge.swift */,
+				C3F58D9125474BB7002BF456 /* CurrentDay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,11 +242,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C33D8C362543663D00CEE37D /* User.swift in Sources */,
+				C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */,
 				C33D8C0E2543640300CEE37D /* ViewController.swift in Sources */,
 				C3F58D8425473AC3002BF456 /* UserController.swift in Sources */,
 				C33D8C0A2543640300CEE37D /* AppDelegate.swift in Sources */,
+				C3F58D9925477D64002BF456 /* Task.swift in Sources */,
 				C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */,
 				C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */,
+				C3F58D9225474BB7002BF456 /* CurrentDay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
