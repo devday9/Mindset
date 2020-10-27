@@ -51,6 +51,7 @@ class User {
         self.profilePhoto = profilePhoto
     }
 }//END OF CLASS
+
 //MARK: - Extensions
 extension User {
     convenience init?(ckRecord: CKRecord) {

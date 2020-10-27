@@ -22,7 +22,13 @@ class Challenge {
         self.tasks = tasks
         self.userReference = userReference
     }
-    
-    
-    
 }//END OF CLASS
+
+//MARK: - Extensions
+extension Challenge {
+    
+    convenience init?(ckRecord: CKRecord) {
+        guard let 
+    }
+    
+}//END OF EXTENSION

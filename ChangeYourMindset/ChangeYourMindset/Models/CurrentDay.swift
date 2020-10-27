@@ -12,7 +12,6 @@ struct DayStrings {
     static let recordTypeKey = "Day"
     fileprivate static let dailyJournalKey = "dailyJournal"
     fileprivate static let allTasksAreCompleteKey = "allTasksAreComplete"
-//    fileprivate static let tasksKey = "tasks"
     fileprivate static let timestampKey = "timestamp"
     fileprivate static let userReferenceKey = "userReference"
     fileprivate static let photoAssetKey = "photoAsset"
@@ -63,6 +62,7 @@ class Day {
     }
     
 }//END OF CLASS
+
 //MARK: - Extensions
 extension Day {
     
