@@ -77,7 +77,8 @@ extension User {
 extension CKRecord {
     convenience init(user: User) {
         self.init(recordType: UserStrings.recordTypeKey, recordID: user.recordID)
-        setValuesForKeys([
+        
+        self.setValuesForKeys([
             UserStrings.usernameKey : user.username,
             UserStrings.appleUserReferenceKey : user.appleUserReference
         ])

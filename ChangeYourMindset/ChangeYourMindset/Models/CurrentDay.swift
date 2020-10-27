@@ -99,7 +99,7 @@ extension CKRecord {
     convenience init(day: Day) {
         self.init(recordType: DayStrings.recordTypeKey, recordID: day.recordID)
         
-        setValuesForKeys([
+        self.setValuesForKeys([
             DayStrings.dailyJournalKey : day.dailyJournal,
             DayStrings.timestampKey : day.timestamp
         ])

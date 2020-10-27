@@ -24,7 +24,7 @@ class Challenge {
     var recordID: CKRecord.ID
     var userReference: CKRecord.Reference?
     
-    init(title: String, startDate: Date, endDate: Date, tasks: [Task], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), userReference: CKRecord.Reference?) {
+    init(title: String, startDate: Date = Date(), endDate: Date = Date(), tasks: [Task], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), userReference: CKRecord.Reference?) {
         self.title = title
         self.startDate = startDate
         self.endDate = endDate
@@ -58,7 +58,7 @@ extension CKRecord {
     convenience init(challenge: Challenge) {
         self.init(recordType: ChallengeStrings.recordTypeKey, recordID: challenge.recordID)
         
-        setValuesForKeys([
+        self.setValuesForKeys([
             ChallengeStrings.titleKey : challenge.title,
             ChallengeStrings.startDateKey : challenge.startDate,
             ChallengeStrings.endDateKey : challenge.endDate
