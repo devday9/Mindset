@@ -1,5 +1,5 @@
 //
-//  CurrentDay.swift
+//  Day.swift
 //  ChangeYourMindset
 //
 //  Created by Deven Day on 10/26/20.
@@ -70,7 +70,7 @@ extension Day {
         guard let dailyJournal = ckrecord[DayStrings.dailyJournalKey] as? String,
               let timestamp = ckrecord[DayStrings.timestampKey] as? Date,
               let allTasksAreComplete = ckrecord[DayStrings.allTasksAreCompleteKey] as? Bool
-              else { return nil }
+        else { return nil }
         
         let reference = ckrecord[DayStrings.userReferenceKey] as? CKRecord.Reference
         

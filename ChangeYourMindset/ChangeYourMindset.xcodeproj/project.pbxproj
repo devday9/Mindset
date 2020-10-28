@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C33D8C0A2543640300CEE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C092543640300CEE37D /* AppDelegate.swift */; };
 		C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C0B2543640300CEE37D /* SceneDelegate.swift */; };
-		C33D8C0E2543640300CEE37D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C0D2543640300CEE37D /* ViewController.swift */; };
 		C33D8C112543640300CEE37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C0F2543640300CEE37D /* Main.storyboard */; };
 		C33D8C132543640300CEE37D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C122543640300CEE37D /* Assets.xcassets */; };
 		C33D8C162543640300CEE37D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C142543640300CEE37D /* LaunchScreen.storyboard */; };
@@ -17,16 +16,18 @@
 		C33D8C362543663D00CEE37D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C352543663D00CEE37D /* User.swift */; };
 		C3F58D8425473AC3002BF456 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D8325473AC3002BF456 /* UserController.swift */; };
 		C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D8625473C5D002BF456 /* MindsetError.swift */; };
-		C3F58D9225474BB7002BF456 /* CurrentDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9125474BB7002BF456 /* CurrentDay.swift */; };
+		C3F58D9225474BB7002BF456 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9125474BB7002BF456 /* Day.swift */; };
 		C3F58D9925477D64002BF456 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9825477D64002BF456 /* Task.swift */; };
 		C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9C25478C25002BF456 /* Challenge.swift */; };
+		C3F58DA52548CED6002BF456 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58DA42548CED6002BF456 /* PhotoPickerViewController.swift */; };
+		C3F58DAA2548DCA9002BF456 /* SignUpLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58DA92548DCA9002BF456 /* SignUpLoginViewController.swift */; };
+		C3F58DAE2548EBC6002BF456 /* PhotoPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F58DAC2548EBC6002BF456 /* PhotoPicker.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C33D8C062543640300CEE37D /* ChangeYourMindset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeYourMindset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33D8C092543640300CEE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C33D8C0B2543640300CEE37D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C33D8C0D2543640300CEE37D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C33D8C102543640300CEE37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C33D8C122543640300CEE37D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C33D8C152543640300CEE37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,9 +37,12 @@
 		C33D8C352543663D00CEE37D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3F58D8325473AC3002BF456 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		C3F58D8625473C5D002BF456 /* MindsetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindsetError.swift; sourceTree = "<group>"; };
-		C3F58D9125474BB7002BF456 /* CurrentDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDay.swift; sourceTree = "<group>"; };
+		C3F58D9125474BB7002BF456 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		C3F58D9825477D64002BF456 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		C3F58D9C25478C25002BF456 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		C3F58DA42548CED6002BF456 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
+		C3F58DA92548DCA9002BF456 /* SignUpLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLoginViewController.swift; sourceTree = "<group>"; };
+		C3F58DAD2548EBC6002BF456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ChangeYourMindset/Views/Storyboards/Base.lproj/PhotoPicker.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C33D8C0F2543640300CEE37D /* Main.storyboard */,
+				C3F58DAC2548EBC6002BF456 /* PhotoPicker.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -147,7 +152,8 @@
 		C33D8C2C254364B500CEE37D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C33D8C0D2543640300CEE37D /* ViewController.swift */,
+				C3F58DA42548CED6002BF456 /* PhotoPickerViewController.swift */,
+				C3F58DA92548DCA9002BF456 /* SignUpLoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -166,7 +172,7 @@
 				C33D8C352543663D00CEE37D /* User.swift */,
 				C3F58D9825477D64002BF456 /* Task.swift */,
 				C3F58D9C25478C25002BF456 /* Challenge.swift */,
-				C3F58D9125474BB7002BF456 /* CurrentDay.swift */,
+				C3F58D9125474BB7002BF456 /* Day.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C33D8C162543640300CEE37D /* LaunchScreen.storyboard in Resources */,
+				C3F58DAE2548EBC6002BF456 /* PhotoPicker.storyboard in Resources */,
 				C33D8C132543640300CEE37D /* Assets.xcassets in Resources */,
 				C33D8C112543640300CEE37D /* Main.storyboard in Resources */,
 			);
@@ -243,13 +250,14 @@
 			files = (
 				C33D8C362543663D00CEE37D /* User.swift in Sources */,
 				C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */,
-				C33D8C0E2543640300CEE37D /* ViewController.swift in Sources */,
+				C3F58DAA2548DCA9002BF456 /* SignUpLoginViewController.swift in Sources */,
 				C3F58D8425473AC3002BF456 /* UserController.swift in Sources */,
 				C33D8C0A2543640300CEE37D /* AppDelegate.swift in Sources */,
+				C3F58DA52548CED6002BF456 /* PhotoPickerViewController.swift in Sources */,
 				C3F58D9925477D64002BF456 /* Task.swift in Sources */,
 				C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */,
 				C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */,
-				C3F58D9225474BB7002BF456 /* CurrentDay.swift in Sources */,
+				C3F58D9225474BB7002BF456 /* Day.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +278,14 @@
 				C33D8C152543640300CEE37D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C3F58DAC2548EBC6002BF456 /* PhotoPicker.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3F58DAD2548EBC6002BF456 /* Base */,
+			);
+			name = PhotoPicker.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

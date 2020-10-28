@@ -20,6 +20,7 @@ class Task {
     var name: String
     var isComplete: Bool
     var recordID: CKRecord.ID
+    // reference grandparent ie challenge
     var dayReference: CKRecord.Reference?
     var progressPhoto: UIImage? {
         get {
@@ -46,7 +47,7 @@ class Task {
         return CKAsset(fileURL: fileURL)
     }
     
-    init(name: String, isComplete: Bool, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), dayReference: CKRecord.Reference?, progressPhoto: UIImage? = nil) {
+    init(name: String, isComplete: Bool = false, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), dayReference: CKRecord.Reference?, progressPhoto: UIImage? = nil) {
         self.name = name
         self.isComplete = isComplete
         self.recordID = recordID

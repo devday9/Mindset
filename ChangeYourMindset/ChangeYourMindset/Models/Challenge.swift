@@ -13,6 +13,7 @@ struct ChallengeStrings {
     fileprivate static let titleKey = "title"
     fileprivate static let startDateKey = "startDate"
     fileprivate static let endDateKey = "endDate"
+    fileprivate static let isCompleteKey = "isComplete"
     fileprivate static let userReferenceKey = "userReference"
 }
 
@@ -20,15 +21,17 @@ class Challenge {
     var title: String
     var startDate: Date
     var endDate: Date
-    var tasks: [Task]
+    var isComplete: Bool
+    var days: [Day]
     var recordID: CKRecord.ID
     var userReference: CKRecord.Reference?
     
-    init(title: String, startDate: Date = Date(), endDate: Date = Date(), tasks: [Task], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), userReference: CKRecord.Reference?) {
+    init(title: String, startDate: Date = Date(), endDate: Date = Date(), isComplete: Bool = false, days: [Day], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), userReference: CKRecord.Reference?) {
         self.title = title
         self.startDate = startDate
         self.endDate = endDate
-        self.tasks = tasks
+        self.isComplete = isComplete
+        self.days = days
         self.recordID = recordID
         self.userReference = userReference
     }
@@ -40,11 +43,12 @@ extension Challenge {
     convenience init?(ckRecord: CKRecord) {
         guard let title = ckRecord[ChallengeStrings.titleKey] as? String,
               let startDate = ckRecord[ChallengeStrings.startDateKey] as? Date,
-              let endDate = ckRecord[ChallengeStrings.endDateKey] as? Date else { return nil }
+              let endDate = ckRecord[ChallengeStrings.endDateKey] as? Date,
+              let isComplete = ckRecord[ChallengeStrings.isCompleteKey] as? Bool else { return nil }
         
         let reference = ckRecord[ChallengeStrings.userReferenceKey] as? CKRecord.Reference
         
-        self.init(title: title, startDate: startDate, endDate: endDate, tasks: [], userReference: reference)
+        self.init(title: title, startDate: startDate, endDate: endDate, isComplete: isComplete, days: [], recordID: ckRecord.recordID, userReference: reference)
     }
 }//END OF EXTENSION
 
