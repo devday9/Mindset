@@ -56,7 +56,8 @@ class PhotoPickerViewController: UIViewController {
     func setupViews() {
         photoImageView.contentMode = .scaleToFill
         photoImageView.clipsToBounds = true
-        photoImageView.backgroundColor = .darkGray
+        photoImageView.backgroundColor = .systemRed
+        
         imagePicker.delegate = self
     }
 }//END OF CLASS

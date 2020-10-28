@@ -21,7 +21,9 @@
 		C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9C25478C25002BF456 /* Challenge.swift */; };
 		C3F58DA52548CED6002BF456 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58DA42548CED6002BF456 /* PhotoPickerViewController.swift */; };
 		C3F58DAA2548DCA9002BF456 /* SignUpLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58DA92548DCA9002BF456 /* SignUpLoginViewController.swift */; };
-		C3F58DAE2548EBC6002BF456 /* PhotoPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F58DAC2548EBC6002BF456 /* PhotoPicker.storyboard */; };
+		C3F58DC125490EA0002BF456 /* PhotoPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F58DBF25490EA0002BF456 /* PhotoPicker.storyboard */; };
+		C3F58DC525491A77002BF456 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58DC425491A77002BF456 /* StyleGuide.swift */; };
+		C3F58DC925491B5C002BF456 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58DC825491B5C002BF456 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +44,9 @@
 		C3F58D9C25478C25002BF456 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		C3F58DA42548CED6002BF456 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
 		C3F58DA92548DCA9002BF456 /* SignUpLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLoginViewController.swift; sourceTree = "<group>"; };
-		C3F58DAD2548EBC6002BF456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ChangeYourMindset/Views/Storyboards/Base.lproj/PhotoPicker.storyboard; sourceTree = "<group>"; };
+		C3F58DC025490EA0002BF456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ChangeYourMindset/Views/Storyboards/Base.lproj/PhotoPicker.storyboard; sourceTree = "<group>"; };
+		C3F58DC425491A77002BF456 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
+		C3F58DC825491B5C002BF456 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				C3F58D8625473C5D002BF456 /* MindsetError.swift */,
+				C3F58DC425491A77002BF456 /* StyleGuide.swift */,
+				C3F58DC825491B5C002BF456 /* DateExtension.swift */,
 			);
 			path = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -135,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				C33D8C0F2543640300CEE37D /* Main.storyboard */,
-				C3F58DAC2548EBC6002BF456 /* PhotoPicker.storyboard */,
+				C3F58DBF25490EA0002BF456 /* PhotoPicker.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -235,7 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C33D8C162543640300CEE37D /* LaunchScreen.storyboard in Resources */,
-				C3F58DAE2548EBC6002BF456 /* PhotoPicker.storyboard in Resources */,
+				C3F58DC125490EA0002BF456 /* PhotoPicker.storyboard in Resources */,
 				C33D8C132543640300CEE37D /* Assets.xcassets in Resources */,
 				C33D8C112543640300CEE37D /* Main.storyboard in Resources */,
 			);
@@ -249,11 +255,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C33D8C362543663D00CEE37D /* User.swift in Sources */,
+				C3F58DC925491B5C002BF456 /* DateExtension.swift in Sources */,
 				C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */,
 				C3F58DAA2548DCA9002BF456 /* SignUpLoginViewController.swift in Sources */,
 				C3F58D8425473AC3002BF456 /* UserController.swift in Sources */,
 				C33D8C0A2543640300CEE37D /* AppDelegate.swift in Sources */,
 				C3F58DA52548CED6002BF456 /* PhotoPickerViewController.swift in Sources */,
+				C3F58DC525491A77002BF456 /* StyleGuide.swift in Sources */,
 				C3F58D9925477D64002BF456 /* Task.swift in Sources */,
 				C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */,
 				C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */,
@@ -280,10 +288,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		C3F58DAC2548EBC6002BF456 /* PhotoPicker.storyboard */ = {
+		C3F58DBF25490EA0002BF456 /* PhotoPicker.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C3F58DAD2548EBC6002BF456 /* Base */,
+				C3F58DC025490EA0002BF456 /* Base */,
 			);
 			name = PhotoPicker.storyboard;
 			sourceTree = "<group>";
