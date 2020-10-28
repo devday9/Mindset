@@ -40,26 +40,40 @@ class SignUpLoginViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func createUserButtonTapped(_ sender: Any) {
+        guard let username = usernameTextField.text, !username.isEmpty,
+              let password = enterPasswordTextField.text, !password.isEmpty,
+              let confirmPassword = confirmPasswordTextField.text,
+              password == confirmPassword else { return }
         
+        UserController.shared.createUser(username: username, profilePhoto: image) { (result) in
+            switch result {
+            case .success(_):
+                self.presentOverviewVC()
+            case .failure(let error):
+                print(error.errorDescription)
+            }
+        }
     }
+    
     @IBAction func logInButtonTapped(_ sender: Any) {
         toggleToLogIn()
     }
+    
     @IBAction func signUpButtonTapped(_ sender: Any) {
         toggleToSignUp()
     }
     
     //MARK: - Helper Functions
-//    func fetchUser() {
-//        UserController.shared.fetchUser { (result) in
-//            switch result {
-//            case .success(_):
-//                self.present
-//            case .failure(_):
-//                <#code#>
-//            }
-//        }
-//    }
+    func fetchUser() {
+        UserController.shared.fetchUser { (result) in
+            switch result {
+            case .success(_):
+                self.presentOverviewVC()
+            case .failure(let error):
+                print(error.errorDescription)
+            }
+        }
+    }
     
     func setupViews() {
         self.view.backgroundColor = .lightGray
@@ -72,6 +86,8 @@ class SignUpLoginViewController: UIViewController {
         usernameTextField.addAccentBorder()
         enterPasswordTextField.addAccentBorder()
         confirmPasswordTextField.addAccentBorder()
+        self.enterPasswordTextField.isSecureTextEntry = true
+        self.confirmPasswordTextField.isSecureTextEntry = true
     }
     
     func toggleToLogIn() {
