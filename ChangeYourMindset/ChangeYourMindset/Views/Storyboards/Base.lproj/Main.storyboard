@@ -143,16 +143,6 @@
             </objects>
             <point key="canvasLocation" x="639" y="-225"/>
         </scene>
-        <!--Overview-->
-        <scene sceneID="LJ8-Fj-kwk">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Overview" id="DeO-5U-Jwy" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="T1g-gN-e5Y"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MVE-2V-Mf7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="626" y="203"/>
-        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
