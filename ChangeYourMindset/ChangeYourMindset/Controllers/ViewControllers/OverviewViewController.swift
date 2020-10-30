@@ -9,8 +9,8 @@ import UIKit
 
 class OverviewViewController: UIViewController {
     
-    private let itemsPerRow: CGFloat = 10
-    private let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
+    private let itemsPerRow: CGFloat = 8
+    private let sectionInsets = UIEdgeInsets(top: 8.0, left: 15.0, bottom: 10.0, right: 15.0)
     
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,10 +23,6 @@ class OverviewViewController: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        //        if let flowLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-        //            flowLayout.itemSize = CGSize(width: 30, height: 30)
-        //        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -36,6 +32,11 @@ class OverviewViewController: UIViewController {
             viewsLaidOut = true
         }
     }
+    
+    //MARK: - Actions
+    @IBAction func clearAllDataButtonTapped(_ sender: Any) {
+    }
+    
     
     //MARK: - Helper Functions
     func setupViews() {
@@ -54,9 +55,7 @@ extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as? DayCollectionViewCell else { return UICollectionViewCell() }
         cell.dayLabel.text = String(indexPath.row + 1)
-        cell.backgroundColor = .black
         cell.dayLabel.textColor = .white
-        cell.addCornerRadius(radius: cell.frame.height / 2)
         
         return cell
     }
@@ -80,7 +79,7 @@ extension OverviewViewController: UICollectionViewDelegateFlowLayout {
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        return CGSize(width: widthPerItem, height: widthPerItem - 8)
     }
     
     func collectionView(_ collectionView: UICollectionView,

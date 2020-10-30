@@ -42,8 +42,8 @@ class LaunchScreenCopyViewController: UIViewController {
     
     func presentSignUpVC() {
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
-            guard let viewController = storyboard.instantiateInitialViewController() else { return }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(identifier: "SignUpVC")
             viewController.modalPresentationStyle = .fullScreen
             self.present(viewController, animated: true)
         }

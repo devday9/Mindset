@@ -10,6 +10,7 @@
 		C336910C254B32900073035C /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C336910B254B32900073035C /* OverviewViewController.swift */; };
 		C336910F254B64320073035C /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C336910E254B64320073035C /* DayCollectionViewCell.swift */; };
 		C3369113254B773B0073035C /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */; };
+		C3369118254BB8400073035C /* ChallengeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3369117254BB8400073035C /* ChallengeController.swift */; };
 		C33D8C0A2543640300CEE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C092543640300CEE37D /* AppDelegate.swift */; };
 		C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C0B2543640300CEE37D /* SceneDelegate.swift */; };
 		C33D8C112543640300CEE37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C0F2543640300CEE37D /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		C336910B254B32900073035C /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		C336910E254B64320073035C /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
+		C3369117254BB8400073035C /* ChallengeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeController.swift; sourceTree = "<group>"; };
 		C33D8C062543640300CEE37D /* ChangeYourMindset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeYourMindset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33D8C092543640300CEE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C33D8C0B2543640300CEE37D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F58D8325473AC3002BF456 /* UserController.swift */,
+				C3369117254BB8400073035C /* ChallengeController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				C3369113254B773B0073035C /* LaunchScreenCopyViewController.swift in Sources */,
 				C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */,
 				C3F58DAA2548DCA9002BF456 /* SignUpLoginViewController.swift in Sources */,
+				C3369118254BB8400073035C /* ChallengeController.swift in Sources */,
 				C3F58D8425473AC3002BF456 /* UserController.swift in Sources */,
 				C33D8C0A2543640300CEE37D /* AppDelegate.swift in Sources */,
 				C3F58DA52548CED6002BF456 /* PhotoPickerViewController.swift in Sources */,

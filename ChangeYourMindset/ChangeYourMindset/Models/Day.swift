@@ -14,6 +14,7 @@ struct DayStrings {
     fileprivate static let allTasksAreCompleteKey = "allTasksAreComplete"
     fileprivate static let timestampKey = "timestamp"
     fileprivate static let userReferenceKey = "userReference"
+    // ref challenge
     fileprivate static let photoAssetKey = "photoAsset"
 }
 

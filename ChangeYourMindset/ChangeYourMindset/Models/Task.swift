@@ -12,7 +12,7 @@ struct TaskStrings {
     static let recordTypeKey = "Task"
     fileprivate static let nameKey = "name"
     fileprivate static let isCompleteKey = "isComplete"
-    fileprivate static let dayReferenceKey = "dayReference"
+    fileprivate static let challengeReferenceKey = "challengeReference"
     fileprivate static let photoAssetKey = "photoAsset"
 }//END OF STRUCT
 
@@ -20,8 +20,7 @@ class Task {
     var name: String
     var isComplete: Bool
     var recordID: CKRecord.ID
-    // reference grandparent ie challenge
-    var dayReference: CKRecord.Reference?
+    var challengeReference: CKRecord.Reference?
     var progressPhoto: UIImage? {
         get {
             guard let data = photoData else { return nil }
@@ -47,11 +46,11 @@ class Task {
         return CKAsset(fileURL: fileURL)
     }
     
-    init(name: String, isComplete: Bool = false, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), dayReference: CKRecord.Reference?, progressPhoto: UIImage? = nil) {
+    init(name: String, isComplete: Bool = false, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), challengeReference: CKRecord.Reference?, progressPhoto: UIImage? = nil) {
         self.name = name
         self.isComplete = isComplete
         self.recordID = recordID
-        self.dayReference = dayReference
+        self.challengeReference = challengeReference
         self.progressPhoto = progressPhoto
     }
 }//END OF CLASS
@@ -63,7 +62,7 @@ extension Task {
         guard let name = ckRecord[TaskStrings.nameKey] as? String,
               let isComplete = ckRecord[TaskStrings.isCompleteKey] as? Bool else { return nil }
         
-        let reference = ckRecord[TaskStrings.dayReferenceKey] as? CKRecord.Reference
+        let reference = ckRecord[TaskStrings.challengeReferenceKey] as? CKRecord.Reference
         
         var foundPhoto: UIImage?
         
@@ -76,7 +75,7 @@ extension Task {
             }
         }
         
-        self.init(name: name, isComplete: isComplete, recordID: ckRecord.recordID, dayReference: reference, progressPhoto: foundPhoto)
+        self.init(name: name, isComplete: isComplete, recordID: ckRecord.recordID, challengeReference: reference, progressPhoto: foundPhoto)
     }
 }//END OF EXTENSION
 
@@ -95,8 +94,8 @@ extension CKRecord {
             TaskStrings.isCompleteKey : task.isComplete
         ])
         
-        if let dayReference = task.dayReference {
-            setValue(dayReference, forKey: TaskStrings.dayReferenceKey)
+        if let challengeReference = task.challengeReference {
+            setValue(challengeReference, forKey: TaskStrings.challengeReferenceKey)
         }
         
         if task.photoAsset != nil {
