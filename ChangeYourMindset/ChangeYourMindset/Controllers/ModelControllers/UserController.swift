@@ -48,7 +48,7 @@ class UserController {
         }
     }
     
-    func fetchUser(completion: @escaping (Result<Bool, MindsetError>) -> Void) {
+    func fetchUser(completion: @escaping (Result<User?, MindsetError>) -> Void) {
         
         fetchAppleUserReference { (result) in
             switch result {
@@ -60,21 +60,25 @@ class UserController {
                 self.privateDB.perform(query, inZoneWith: nil) { (records, error) in
                     if let error = error {
                         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                        completion(.failure(.ckError(error)))
+                        return
                     }
                     
-                    guard let record = records?.first,
-                          let fetchedUser = User(ckRecord: record) else {
+                    guard let record = records?.first else {
+                        return completion(.success(nil))
+                    }
+                    guard let fetchedUser = User(ckRecord: record) else {
                         completion(.failure(.couldNotUnwrap))
                         return
                     }
                     
                     self.currentUser = fetchedUser
                     print("Successfully fetched user with id: \(fetchedUser.recordID)")
-                    completion(.success(true))
+                    completion(.success(self.currentUser))
                 }
             case .failure(let error):
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                completion(.success(true))
+                completion(.failure(.ckError(error)))
             }
         }
     }

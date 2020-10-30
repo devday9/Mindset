@@ -27,7 +27,6 @@ class SignUpLoginViewController: UIViewController {
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fetchUser()
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,17 +63,6 @@ class SignUpLoginViewController: UIViewController {
     }
     
     //MARK: - Helper Functions
-    func fetchUser() {
-        UserController.shared.fetchUser { (result) in
-            switch result {
-            case .success(_):
-                self.presentOverviewVC()
-            case .failure(let error):
-                print(error.errorDescription)
-            }
-        }
-    }
-    
     func setupViews() {
         self.view.backgroundColor = .lightGray
         containerView.clipsToBounds = true
@@ -116,6 +104,13 @@ class SignUpLoginViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPhotoPickerVC" {
+            let destinationVC = segue.destination as? PhotoPickerViewController
+            destinationVC?.delegate = self
+        }
+    }
+    
     func presentOverviewVC() {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Overview", bundle: nil)
@@ -124,14 +119,6 @@ class SignUpLoginViewController: UIViewController {
             self.present(viewController, animated: true)
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toPhotoPickerVC" {
-            let destinationVC = segue.destination as? PhotoPickerViewController
-            destinationVC?.delegate = self
-        }
-    }
-    
 }//END OF CLASS
 
 //MARK: - Extensions

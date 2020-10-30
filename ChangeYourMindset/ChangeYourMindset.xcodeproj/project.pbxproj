@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C336910C254B32900073035C /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C336910B254B32900073035C /* OverviewViewController.swift */; };
+		C336910F254B64320073035C /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C336910E254B64320073035C /* DayCollectionViewCell.swift */; };
+		C3369113254B773B0073035C /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */; };
 		C33D8C0A2543640300CEE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C092543640300CEE37D /* AppDelegate.swift */; };
 		C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C0B2543640300CEE37D /* SceneDelegate.swift */; };
 		C33D8C112543640300CEE37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C0F2543640300CEE37D /* Main.storyboard */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C336910B254B32900073035C /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		C336910E254B64320073035C /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
+		C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
 		C33D8C062543640300CEE37D /* ChangeYourMindset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeYourMindset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33D8C092543640300CEE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C33D8C0B2543640300CEE37D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F58DDD254A2B2C002BF456 /* TaskTableViewCell.swift */,
+				C336910E254B64320073035C /* DayCollectionViewCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -148,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				C33D8C0F2543640300CEE37D /* Main.storyboard */,
-				C3F58DBF25490EA0002BF456 /* PhotoPicker.storyboard */,
 				C3F58DD7254A0A21002BF456 /* Overview.storyboard */,
+				C3F58DBF25490EA0002BF456 /* PhotoPicker.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -169,6 +176,8 @@
 				C3F58DA42548CED6002BF456 /* PhotoPickerViewController.swift */,
 				C3F58DA92548DCA9002BF456 /* SignUpLoginViewController.swift */,
 				C3F58DCE2549BE22002BF456 /* DayViewController.swift */,
+				C336910B254B32900073035C /* OverviewViewController.swift */,
+				C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -266,7 +275,9 @@
 			files = (
 				C3F58DDE254A2B2C002BF456 /* TaskTableViewCell.swift in Sources */,
 				C33D8C362543663D00CEE37D /* User.swift in Sources */,
+				C336910C254B32900073035C /* OverviewViewController.swift in Sources */,
 				C3F58DC925491B5C002BF456 /* DateExtension.swift in Sources */,
+				C3369113254B773B0073035C /* LaunchScreenCopyViewController.swift in Sources */,
 				C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */,
 				C3F58DAA2548DCA9002BF456 /* SignUpLoginViewController.swift in Sources */,
 				C3F58D8425473AC3002BF456 /* UserController.swift in Sources */,
@@ -274,6 +285,7 @@
 				C3F58DA52548CED6002BF456 /* PhotoPickerViewController.swift in Sources */,
 				C3F58DC525491A77002BF456 /* StyleGuide.swift in Sources */,
 				C3F58DCF2549BE22002BF456 /* DayViewController.swift in Sources */,
+				C336910F254B64320073035C /* DayCollectionViewCell.swift in Sources */,
 				C3F58D9925477D64002BF456 /* Task.swift in Sources */,
 				C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */,
 				C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */,
