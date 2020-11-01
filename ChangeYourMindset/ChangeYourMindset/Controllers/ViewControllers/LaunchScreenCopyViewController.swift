@@ -9,12 +9,14 @@ import UIKit
 
 class LaunchScreenCopyViewController: UIViewController {
 
+    //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUser()
 
     }
     
+    //MARK: - Helper Functions
     func fetchUser() {
         UserController.shared.fetchUser { (result) in
             switch result {
