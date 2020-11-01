@@ -11,8 +11,4 @@ class DayCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Outlets
     @IBOutlet weak var dayLabel: UILabel!
-    
-    //MARK: - Properties
-    
-    
 }//END OF CLASS

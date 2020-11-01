@@ -11,9 +11,9 @@ import CloudKit
 struct TaskStrings {
     static let recordTypeKey = "Task"
     fileprivate static let nameKey = "name"
+    fileprivate static let photoAssetKey = "photoAsset"
     fileprivate static let isCompleteKey = "isComplete"
     fileprivate static let challengeReferenceKey = "challengeReference"
-    fileprivate static let photoAssetKey = "photoAsset"
 }//END OF STRUCT
 
 class Task {

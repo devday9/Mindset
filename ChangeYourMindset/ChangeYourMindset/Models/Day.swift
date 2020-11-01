@@ -14,16 +14,18 @@ struct DayStrings {
     fileprivate static let allTasksAreCompleteKey = "allTasksAreComplete"
     fileprivate static let timestampKey = "timestamp"
     fileprivate static let userReferenceKey = "userReference"
-    // ref challenge
+    fileprivate static let challengeReferenceKey = "challengeReference"
     fileprivate static let photoAssetKey = "photoAsset"
+    fileprivate static let dayNumberKey = "dayNumber"
 }
 
 class Day {
+    var dayNumber: Int
     var dailyJournal: String
     var allTasksAreComplete: Bool
     var tasks: [Task]
-    var timestamp: Date
     var recordID: CKRecord.ID
+    var challengeReference: CKRecord.Reference?
     var userReference: CKRecord.Reference?
     var dailyProgressPhoto: UIImage? {
         get {
@@ -52,12 +54,13 @@ class Day {
         }
     }
     
-    init(dailyJournal: String, allTasksAreComplete: Bool, tasks: [Task], timestamp: Date = Date(), recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), userReference: CKRecord.Reference?, dailyProgressPhoto: UIImage?) {
+    init(dayNumber: Int, dailyJournal: String, allTasksAreComplete: Bool, tasks: [Task], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), challengeReference: CKRecord.Reference?, userReference: CKRecord.Reference?, dailyProgressPhoto: UIImage?) {
+        self.dayNumber = dayNumber
         self.dailyJournal = dailyJournal
         self.allTasksAreComplete = allTasksAreComplete
         self.tasks = tasks
-        self.timestamp = timestamp
         self.recordID = recordID
+        self.challengeReference = challengeReference
         self.userReference = userReference
         self.dailyProgressPhoto = dailyProgressPhoto
     }
@@ -68,12 +71,13 @@ class Day {
 extension Day {
     
     convenience init?(ckrecord: CKRecord) {
-        guard let dailyJournal = ckrecord[DayStrings.dailyJournalKey] as? String,
-              let timestamp = ckrecord[DayStrings.timestampKey] as? Date,
+        guard let dayNumber = ckrecord[DayStrings.dayNumberKey] as? Int,
+              let dailyJournal = ckrecord[DayStrings.dailyJournalKey] as? String,
               let allTasksAreComplete = ckrecord[DayStrings.allTasksAreCompleteKey] as? Bool
         else { return nil }
         
-        let reference = ckrecord[DayStrings.userReferenceKey] as? CKRecord.Reference
+        let reference = ckrecord[DayStrings.userReferenceKey] as? CKRecord.Reference,
+            challengeReference = ckrecord[DayStrings.challengeReferenceKey] as? CKRecord.Reference
         
         var foundPhoto: UIImage?
         
@@ -86,7 +90,7 @@ extension Day {
             }
         }
         
-        self.init(dailyJournal: dailyJournal, allTasksAreComplete: allTasksAreComplete, tasks: [], timestamp: timestamp, recordID: ckrecord.recordID, userReference: reference, dailyProgressPhoto: foundPhoto)
+        self.init(dayNumber: dayNumber, dailyJournal: dailyJournal, allTasksAreComplete: allTasksAreComplete, tasks: [], recordID: ckrecord.recordID, challengeReference: challengeReference, userReference: reference, dailyProgressPhoto: foundPhoto)
     }
 }//END OF EXTENSION
 
@@ -102,12 +106,16 @@ extension CKRecord {
         
         self.setValuesForKeys([
             DayStrings.dailyJournalKey : day.dailyJournal,
-            DayStrings.timestampKey : day.timestamp
+            DayStrings.dayNumberKey : day.dayNumber
         ])
         
         if let userReference = day.userReference {
             setValue(userReference, forKey: DayStrings.userReferenceKey)
         }
+        
+//        if let challengeReference = day.challengeReference {
+//            setValue(challengeReference, forKey: DayStrings.challengeReferenceKey)
+//        }
         
         if  day.photoAsset != nil {
             setValue(day.photoAsset, forKey: DayStrings.photoAssetKey)

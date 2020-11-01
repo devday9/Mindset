@@ -35,13 +35,28 @@ class OverviewViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func clearAllDataButtonTapped(_ sender: Any) {
+        clearAllData()
     }
-    
     
     //MARK: - Helper Functions
     func setupViews() {
         self.view.backgroundColor = .systemRed
         collectionView.backgroundColor = .systemRed
+    }
+    
+    func clearAllData() {
+        
+    }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDayVC" {
+            guard let indexArray = collectionView.indexPathsForSelectedItems,
+                  let destination = segue.destination as? DayViewController
+                  else { return }
+            let indexPath = indexArray[0]
+            destination.day = DayController.shared.days[indexPath.row]
+        }
     }
 }//END OF CLASS
 
@@ -49,23 +64,15 @@ class OverviewViewController: UIViewController {
 extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 75
+        return DayController.shared.days.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as? DayCollectionViewCell else { return UICollectionViewCell() }
-        cell.dayLabel.text = String(indexPath.row + 1)
+        cell.dayLabel.text = String(DayController.shared.days[indexPath.row].dayNumber)
         cell.dayLabel.textColor = .white
         
         return cell
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item + 1)
     }
 }//END OF EXTENSION
 

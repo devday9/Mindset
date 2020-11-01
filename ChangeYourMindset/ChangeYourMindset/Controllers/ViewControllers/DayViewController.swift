@@ -18,6 +18,7 @@ class DayViewController: UIViewController {
     //MARK: - Properties
     var image: UIImage?
     var viewsLaidOut = false
+    var day: Day?
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -36,9 +37,12 @@ class DayViewController: UIViewController {
     
     //MARK: - Helper Functions
     func setupViews() {
+        guard let day = day else { return }
+        
+        view.backgroundColor = .systemRed
+        photoContainerView.addAccentBorder()
         photoContainerView.layer.cornerRadius = 32
         photoContainerView.clipsToBounds = true
-        view.backgroundColor = .systemRed
         bodyTextView.backgroundColor = .lightGray
         bodyTextView.textColor = .black
         bodyTextView.layer.cornerRadius = 32
@@ -51,6 +55,8 @@ class DayViewController: UIViewController {
         bodyTextView.textContainerInset.right = 12
         taskTableView.layer.cornerRadius = 32
         taskTableView.backgroundColor = .lightGray
+        taskTableView.isScrollEnabled = false
+        dayNumberLabel.text = "Day \(day.dayNumber)"
     }
     
     //MARK: - Navigation
@@ -62,7 +68,7 @@ class DayViewController: UIViewController {
     }
 }//END OF CLASS
 
-//MARK: - Extension
+//MARK: - Extensions
 extension DayViewController: PhotoSelectorDelegate {
     func photoPickerSelected(image: UIImage) {
         self.image = image
@@ -71,18 +77,28 @@ extension DayViewController: PhotoSelectorDelegate {
 
 extension DayViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return ChallengeController.shared.tasks.count
-        return 1
+        //        return ChallengeController.shared.tasks.count
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskTableViewCell else { return UITableViewCell() }
         
-//        let taskToDisplay = TaskController.shared.tasks[indexPath.row]
-//        cell.textLabel?.text = challengeToDisplay.name
-        let task = Task(name: "HI", challengeReference: nil)
+        //        let taskToDisplay = TaskController.shared.tasks[indexPath.row]
+        //        cell.textLabel?.text = challengeToDisplay.name
+        let task = Task(name: "10 Pages of Reading", challengeReference: nil)
         cell.task = task
+        cell.delegate = self
         
         return cell
+    }
+}//END OF EXTENSION
+
+extension DayViewController: TaskCellDelegate {
+    func completeButtonTapped(sender: TaskTableViewCell) {
+        guard let task = sender.task else { return }
+        TaskController.shared.toggleComplete(task: task)
+        
+        sender.task = task
     }
 }//END OF EXTENSION

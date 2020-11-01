@@ -22,6 +22,7 @@ class TaskTableViewCell: UITableViewCell {
     var task: Task? {
         didSet {
             updateViews()
+            setupViews()
         }
     }
     
@@ -34,6 +35,18 @@ class TaskTableViewCell: UITableViewCell {
     
     //MARK: - Actions
     @IBAction func completeButtonTapped(_ sender: Any) {
-//        delegate?.completeButtonTapped(sender: self)
+        delegate?.completeButtonTapped(sender: self)
+        taskComplete()
+    }
+    
+    //MARK: - Helper Functions
+    func setupViews() {
+        self.backgroundColor = .lightGray
+    }
+    
+    func taskComplete() {
+        self.backgroundColor = .black
+        taskLabel.textColor = .red
+        //if else statment to change the color if isComplete is unchecked?
     }
 }//END OF CLASS
