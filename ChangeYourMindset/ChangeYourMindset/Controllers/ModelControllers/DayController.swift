@@ -14,7 +14,7 @@ class DayController {
     let privateDB = CKContainer.default().privateCloudDatabase
     static let shared = DayController()
     var days: [Day] = []
-    
+
     init() {
         createDays(numberOfDays: 75)
     }

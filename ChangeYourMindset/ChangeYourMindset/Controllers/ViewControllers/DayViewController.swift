@@ -11,7 +11,7 @@ class DayViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var dayNumberLabel: UILabel!
-    @IBOutlet weak var photoContainerView: UIView!
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var taskTableView: UITableView!
     
@@ -40,10 +40,10 @@ class DayViewController: UIViewController {
         guard let day = day else { return }
         
         view.backgroundColor = .systemRed
-        photoContainerView.addAccentBorder()
-        photoContainerView.contentMode = .scaleToFill
-        photoContainerView.layer.cornerRadius = 32
-        photoContainerView.clipsToBounds = true
+        containerView.addAccentBorder()
+        containerView.contentMode = .scaleToFill
+        containerView.layer.cornerRadius = 32
+        containerView.clipsToBounds = true
         bodyTextView.backgroundColor = .lightGray
         bodyTextView.textColor = .black
         bodyTextView.layer.cornerRadius = 32
@@ -73,6 +73,7 @@ class DayViewController: UIViewController {
 extension DayViewController: PhotoSelectorDelegate {
     func photoPickerSelected(image: UIImage) {
         self.image = image
+//        TaskController.shared.update(task: <#T##Task#>, progressPhoto: <#T##UIImage?#>)
     }
 }//END OF EXTENSION
 

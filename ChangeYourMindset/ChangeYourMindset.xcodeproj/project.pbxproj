@@ -176,11 +176,11 @@
 		C33D8C2C254364B500CEE37D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */,
 				C3F58DA42548CED6002BF456 /* PhotoPickerViewController.swift */,
 				C3F58DA92548DCA9002BF456 /* SignUpLoginViewController.swift */,
-				C3F58DCE2549BE22002BF456 /* DayViewController.swift */,
 				C336910B254B32900073035C /* OverviewViewController.swift */,
-				C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */,
+				C3F58DCE2549BE22002BF456 /* DayViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

@@ -8,11 +8,8 @@
 import Foundation
 
 class ChallengeController {
-
-//    static var seventyFiveHard: [Task] {
-//        let readTenPages = Task(name: "10 Pages of Reading ", isComplete: false, recordID: <#T##CKRecord.ID#>, dayReference: <#T##CKRecord.Reference?#>, progressPhoto: nil)
-//
-//
-//        return []
-//    }
-}
+    
+    static let shared = ChallengeController()
+    
+    let currentChallenge: Challenge? = nil
+}//END OF CLASS

@@ -287,8 +287,8 @@
                     <navigationItem key="navigationItem" id="N4u-3G-pTV"/>
                     <connections>
                         <outlet property="bodyTextView" destination="dkt-MZ-LO1" id="ja1-I9-oSv"/>
+                        <outlet property="containerView" destination="Zgm-zi-Uv9" id="WPF-iw-Xbr"/>
                         <outlet property="dayNumberLabel" destination="PYR-M8-jUP" id="nYg-Q8-eBX"/>
-                        <outlet property="photoContainerView" destination="Zgm-zi-Uv9" id="WPF-iw-Xbr"/>
                         <outlet property="taskTableView" destination="v6j-Rg-eLm" id="9g5-ny-8JE"/>
                     </connections>
                 </viewController>
