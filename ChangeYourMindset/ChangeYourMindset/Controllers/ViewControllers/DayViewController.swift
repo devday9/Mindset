@@ -41,6 +41,7 @@ class DayViewController: UIViewController {
         
         view.backgroundColor = .systemRed
         photoContainerView.addAccentBorder()
+        photoContainerView.contentMode = .scaleToFill
         photoContainerView.layer.cornerRadius = 32
         photoContainerView.clipsToBounds = true
         bodyTextView.backgroundColor = .lightGray

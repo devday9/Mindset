@@ -19,7 +19,7 @@ class DayController {
         createDays(numberOfDays: 75)
     }
     
-    //MARK: - Helper Functions
+    //MARK: - CRUD Functions
     func createDays(numberOfDays: Int) {
         
         guard let user = UserController.shared.currentUser else { return }
