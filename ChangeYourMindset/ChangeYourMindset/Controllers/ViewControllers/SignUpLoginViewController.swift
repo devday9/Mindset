@@ -74,8 +74,13 @@ class SignUpLoginViewController: UIViewController {
         usernameTextField.addAccentBorder()
         enterPasswordTextField.addAccentBorder()
         confirmPasswordTextField.addAccentBorder()
+        enterPasswordTextField.layer.cornerRadius = 15
+        usernameTextField.layer.cornerRadius = 15
+        confirmPasswordTextField.layer.cornerRadius = 15
         self.enterPasswordTextField.isSecureTextEntry = true
         self.confirmPasswordTextField.isSecureTextEntry = true
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
     }
     
     func toggleToLogIn() {

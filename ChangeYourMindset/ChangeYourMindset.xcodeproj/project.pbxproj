@@ -20,6 +20,14 @@
 		C33D8C362543663D00CEE37D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C352543663D00CEE37D /* User.swift */; };
 		C3D64C59254CB1A700AED4AE /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D64C58254CB1A700AED4AE /* DayController.swift */; };
 		C3D64C5C254CE1EB00AED4AE /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D64C5B254CE1EB00AED4AE /* TaskController.swift */; };
+		C3D64CB125530EA600AED4AE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D64C6B2552242500AED4AE /* WidgetKit.framework */; };
+		C3D64CB225530EA600AED4AE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D64C6D2552242500AED4AE /* SwiftUI.framework */; };
+		C3D64CB525530EA600AED4AE /* DayTableViewWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D64CB425530EA600AED4AE /* DayTableViewWidget.swift */; };
+		C3D64CB725530EA700AED4AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D64CB625530EA700AED4AE /* Assets.xcassets */; };
+		C3D64CBB25530EA700AED4AE /* DayTableViewWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C3D64CB025530EA600AED4AE /* DayTableViewWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C3D64CC42553113100AED4AE /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9125474BB7002BF456 /* Day.swift */; };
+		C3D64CCE2553638300AED4AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C122543640300CEE37D /* Assets.xcassets */; };
+		C3D64CD925536EC900AED4AE /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9825477D64002BF456 /* Task.swift */; };
 		C3F58D8425473AC3002BF456 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D8325473AC3002BF456 /* UserController.swift */; };
 		C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D8625473C5D002BF456 /* MindsetError.swift */; };
 		C3F58D9225474BB7002BF456 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58D9125474BB7002BF456 /* Day.swift */; };
@@ -33,6 +41,30 @@
 		C3F58DD8254A0A21002BF456 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F58DD7254A0A21002BF456 /* Overview.storyboard */; };
 		C3F58DDE254A2B2C002BF456 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F58DDD254A2B2C002BF456 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3D64CB925530EA700AED4AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C33D8BFE2543640200CEE37D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3D64CAF25530EA600AED4AE;
+			remoteInfo = DayTableViewWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C3D64C7B2552242700AED4AE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C3D64CBB25530EA700AED4AE /* DayTableViewWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C336910B254B32900073035C /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +83,13 @@
 		C33D8C352543663D00CEE37D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3D64C58254CB1A700AED4AE /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 		C3D64C5B254CE1EB00AED4AE /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		C3D64C6B2552242500AED4AE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		C3D64C6D2552242500AED4AE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		C3D64CB025530EA600AED4AE /* DayTableViewWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DayTableViewWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D64CB425530EA600AED4AE /* DayTableViewWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewWidget.swift; sourceTree = "<group>"; };
+		C3D64CB625530EA700AED4AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3D64CB825530EA700AED4AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3D64CCB2553629000AED4AE /* DayTableViewWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DayTableViewWidgetExtension.entitlements; sourceTree = "<group>"; };
 		C3F58D8325473AC3002BF456 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		C3F58D8625473C5D002BF456 /* MindsetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindsetError.swift; sourceTree = "<group>"; };
 		C3F58D9125474BB7002BF456 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -74,13 +113,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C3D64CAD25530EA600AED4AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D64CB225530EA600AED4AE /* SwiftUI.framework in Frameworks */,
+				C3D64CB125530EA600AED4AE /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		C33D8BFD2543640200CEE37D = {
 			isa = PBXGroup;
 			children = (
+				C3D64CCB2553629000AED4AE /* DayTableViewWidgetExtension.entitlements */,
 				C33D8C082543640300CEE37D /* ChangeYourMindset */,
+				C3D64CB325530EA600AED4AE /* DayTableViewWidget */,
 				C33D8C072543640300CEE37D /* Products */,
 				C33D8C222543643D00CEE37D /* Frameworks */,
 			);
@@ -90,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				C33D8C062543640300CEE37D /* ChangeYourMindset.app */,
+				C3D64CB025530EA600AED4AE /* DayTableViewWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				C33D8C232543643D00CEE37D /* CloudKit.framework */,
+				C3D64C6B2552242500AED4AE /* WidgetKit.framework */,
+				C3D64C6D2552242500AED4AE /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,6 +260,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		C3D64CB325530EA600AED4AE /* DayTableViewWidget */ = {
+			isa = PBXGroup;
+			children = (
+				C3D64CB425530EA600AED4AE /* DayTableViewWidget.swift */,
+				C3D64CB625530EA700AED4AE /* Assets.xcassets */,
+				C3D64CB825530EA700AED4AE /* Info.plist */,
+			);
+			path = DayTableViewWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,15 +280,34 @@
 				C33D8C022543640300CEE37D /* Sources */,
 				C33D8C032543640300CEE37D /* Frameworks */,
 				C33D8C042543640300CEE37D /* Resources */,
+				C3D64C7B2552242700AED4AE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C3D64CBA25530EA700AED4AE /* PBXTargetDependency */,
 			);
 			name = ChangeYourMindset;
 			productName = ChangeYourMindset;
 			productReference = C33D8C062543640300CEE37D /* ChangeYourMindset.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C3D64CAF25530EA600AED4AE /* DayTableViewWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D64CBC25530EA700AED4AE /* Build configuration list for PBXNativeTarget "DayTableViewWidgetExtension" */;
+			buildPhases = (
+				C3D64CAC25530EA600AED4AE /* Sources */,
+				C3D64CAD25530EA600AED4AE /* Frameworks */,
+				C3D64CAE25530EA600AED4AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DayTableViewWidgetExtension;
+			productName = DayTableViewWidgetExtension;
+			productReference = C3D64CB025530EA600AED4AE /* DayTableViewWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -237,6 +319,9 @@
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					C33D8C052543640300CEE37D = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					C3D64CAF25530EA600AED4AE = {
 						CreatedOnToolsVersion = 12.1;
 					};
 				};
@@ -255,6 +340,7 @@
 			projectRoot = "";
 			targets = (
 				C33D8C052543640300CEE37D /* ChangeYourMindset */,
+				C3D64CAF25530EA600AED4AE /* DayTableViewWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +355,15 @@
 				C33D8C132543640300CEE37D /* Assets.xcassets in Resources */,
 				C3F58DD8254A0A21002BF456 /* Overview.storyboard in Resources */,
 				C33D8C112543640300CEE37D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D64CAE25530EA600AED4AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D64CCE2553638300AED4AE /* Assets.xcassets in Resources */,
+				C3D64CB725530EA700AED4AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +396,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C3D64CAC25530EA600AED4AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D64CB525530EA600AED4AE /* DayTableViewWidget.swift in Sources */,
+				C3D64CD925536EC900AED4AE /* Task.swift in Sources */,
+				C3D64CC42553113100AED4AE /* Day.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3D64CBA25530EA700AED4AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3D64CAF25530EA600AED4AE /* DayTableViewWidgetExtension */;
+			targetProxy = C3D64CB925530EA700AED4AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C33D8C0F2543640300CEE37D /* Main.storyboard */ = {
@@ -382,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -437,7 +550,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -450,6 +563,7 @@
 		C33D8C1B2543640300CEE37D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ChangeYourMindset/ChangeYourMindset.entitlements;
@@ -470,6 +584,7 @@
 		C33D8C1C2543640300CEE37D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ChangeYourMindset/ChangeYourMindset.entitlements;
@@ -484,6 +599,50 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C3D64CBD25530EA700AED4AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DayTableViewWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NZ84G65WL7;
+				INFOPLIST_FILE = DayTableViewWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DevenDay.ChangeYourMindset.DayTableViewWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C3D64CBE25530EA700AED4AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DayTableViewWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NZ84G65WL7;
+				INFOPLIST_FILE = DayTableViewWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DevenDay.ChangeYourMindset.DayTableViewWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -504,6 +663,15 @@
 			buildConfigurations = (
 				C33D8C1B2543640300CEE37D /* Debug */,
 				C33D8C1C2543640300CEE37D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3D64CBC25530EA700AED4AE /* Build configuration list for PBXNativeTarget "DayTableViewWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D64CBD25530EA700AED4AE /* Debug */,
+				C3D64CBE25530EA700AED4AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

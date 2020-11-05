@@ -28,7 +28,27 @@ class DayController {
         
         for day in 1...numberOfDays {
             let day = Day(dayNumber: day, dailyJournal: "", allTasksAreComplete: false, tasks: [], challengeReference: reference, userReference: reference, dailyProgressPhoto: nil)
+            
+            save(day: day) { (result) in
+            }
             days.append(day)
+        }
+    }
+    
+    func save(day: Day, completion: @escaping (Result<Day, MindsetError>) -> Void) {
+        
+        let dayRecord = CKRecord(day: day)
+        
+        privateDB.save(dayRecord) { (record, error) in
+            if let error = error {
+                completion(.failure(.ckError(error)))
+            }
+            
+            guard let record = record,
+                  let savedDay = Day(ckrecord: record) else { return completion(.failure(.couldNotUnwrap))}
+            print("Saved day successfully")
+            
+            completion(.success(savedDay))
         }
     }
     

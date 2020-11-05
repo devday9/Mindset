@@ -113,9 +113,9 @@ extension CKRecord {
             setValue(userReference, forKey: DayStrings.userReferenceKey)
         }
         
-//        if let challengeReference = day.challengeReference {
-//            setValue(challengeReference, forKey: DayStrings.challengeReferenceKey)
-//        }
+        if let challengeReference = day.challengeReference {
+            setValue(challengeReference, forKey: DayStrings.challengeReferenceKey)
+        }
         
         if  day.photoAsset != nil {
             setValue(day.photoAsset, forKey: DayStrings.photoAssetKey)

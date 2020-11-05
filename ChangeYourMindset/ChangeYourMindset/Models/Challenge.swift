@@ -18,15 +18,17 @@ struct ChallengeStrings {
 }
 
 class Challenge {
-    var title: String
+    let title: String
     var startDate: Date
-    var endDate: Date
+    var endDate: Date {
+        return startDate.addTimeInterval(6480000)
+    }
     var isComplete: Bool
-    var days: [Day]
+    let days: [Day]
     var recordID: CKRecord.ID
     var userReference: CKRecord.Reference?
     
-    init(title: String, startDate: Date = Date(), endDate: Date = Date(), isComplete: Bool = false, days: [Day], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), userReference: CKRecord.Reference?) {
+    init(title: String = "Chang Your Mindset", startDate: Date = Date(), isComplete: Bool = false, days: [Day], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), userReference: CKRecord.Reference?) {
         self.title = title
         self.startDate = startDate
         self.endDate = endDate

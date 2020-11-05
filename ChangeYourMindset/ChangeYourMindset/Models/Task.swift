@@ -10,6 +10,7 @@ import CloudKit
 
 struct TaskStrings {
     static let recordTypeKey = "Task"
+    static let dayReferenceKey = "dayReference"
     static let challengeReferenceKey = "challengeReference"
     fileprivate static let nameKey = "name"
     fileprivate static let photoAssetKey = "photoAsset"
@@ -20,6 +21,7 @@ class Task {
     var name: String
     var isComplete: Bool
     var recordID: CKRecord.ID
+    var dayReference: CKRecord.Reference?
     var challengeReference: CKRecord.Reference?
     var progressPhoto: UIImage? {
         get {
@@ -46,7 +48,7 @@ class Task {
         return CKAsset(fileURL: fileURL)
     }
     
-    init(name: String, isComplete: Bool = false, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), challengeReference: CKRecord.Reference?, progressPhoto: UIImage? = nil) {
+    init(name: String, isComplete: Bool = false, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), dayReference: CKRecord.Reference?, challengeReference: CKRecord.Reference?, progressPhoto: UIImage? = nil) {
         self.name = name
         self.isComplete = isComplete
         self.recordID = recordID
@@ -62,7 +64,8 @@ extension Task {
         guard let name = ckRecord[TaskStrings.nameKey] as? String,
               let isComplete = ckRecord[TaskStrings.isCompleteKey] as? Bool else { return nil }
         
-        let reference = ckRecord[TaskStrings.challengeReferenceKey] as? CKRecord.Reference
+        let reference = ckRecord[TaskStrings.challengeReferenceKey] as? CKRecord.Reference,
+            dayReference = ckRecord[TaskStrings.dayReferenceKey] as? CKRecord.Reference
         
         var foundPhoto: UIImage?
         
@@ -75,7 +78,7 @@ extension Task {
             }
         }
         
-        self.init(name: name, isComplete: isComplete, recordID: ckRecord.recordID, challengeReference: reference, progressPhoto: foundPhoto)
+        self.init(name: name, isComplete: isComplete, recordID: ckRecord.recordID, dayReference: dayReference, challengeReference: reference, progressPhoto: foundPhoto)
     }
 }//END OF EXTENSION
 
@@ -96,6 +99,10 @@ extension CKRecord {
         
         if let challengeReference = task.challengeReference {
             setValue(challengeReference, forKey: TaskStrings.challengeReferenceKey)
+        }
+        
+        if let dayReference = task.dayReference{
+            setValue(dayReference, forKey: TaskStrings.dayReferenceKey)
         }
         
         if task.photoAsset != nil {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class OverviewViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class OverviewViewController: UIViewController {
     
     //MARK: - Properties
     var viewsLaidOut = false
+//    let privateDB = CKContainer.default().privateCloudDatabase
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -35,7 +37,7 @@ class OverviewViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func clearAllDataButtonTapped(_ sender: Any) {
-        clearAllData()
+//        clearAllData(Day, completion: <#T##(Result<Bool, MindsetError>) -> Void#>)
     }
     
     //MARK: - Helper Functions
@@ -44,16 +46,32 @@ class OverviewViewController: UIViewController {
         collectionView.backgroundColor = .systemRed
     }
     
-    func clearAllData() {
-        
-    }
+//    func clearAllData(_ days: Day, completion: @escaping (Result<Bool, MindsetError>) -> Void) {
+//
+//        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [days.recordID])
+//
+//        operation.savePolicy = .changedKeys
+//        operation.qualityOfService = .userInteractive
+//        operation.modifyRecordsCompletionBlock = { ( _, recordIDs, error) in
+//
+//            if let error = error {
+//                return completion(.failure(.ckError(error)))
+//            }
+//
+//            guard let recordIDs = recordIDs else { return completion(.failure(.couldNotUnwrap))}
+//            print("\(recordIDs) were removed successfully")
+//            completion(.success(true))
+//        }
+//
+//        privateDB.add(operation)
+//    }
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDayVC" {
             guard let indexArray = collectionView.indexPathsForSelectedItems,
                   let destination = segue.destination as? DayViewController
-                  else { return }
+            else { return }
             let indexPath = indexArray[0]
             destination.day = DayController.shared.days[indexPath.row]
         }

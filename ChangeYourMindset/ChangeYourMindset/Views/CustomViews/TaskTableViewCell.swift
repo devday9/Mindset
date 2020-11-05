@@ -17,7 +17,7 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
     
-    var delegate: DayViewController?
+    weak var delegate: DayViewController?
     
     var task: Task? {
         didSet {
@@ -41,12 +41,20 @@ class TaskTableViewCell: UITableViewCell {
     
     //MARK: - Helper Functions
     func setupViews() {
-        self.backgroundColor = .lightGray
+        self.backgroundColor = .white
     }
     
     func taskComplete() {
-        self.backgroundColor = .black
-        taskLabel.textColor = .red
-        //if else statment to change the color if isComplete is unchecked?
+        
+        guard let task = task else { return }
+        
+        if task.isComplete {
+//            self.backgroundColor = .black
+            taskLabel.textColor = .red
+            
+        } else {
+            self.backgroundColor = .white
+            taskLabel.textColor = .black
+        }
     }
 }//END OF CLASS
