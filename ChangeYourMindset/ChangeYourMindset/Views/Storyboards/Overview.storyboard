@@ -205,12 +205,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(day #)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYR-M8-jUP">
-                                <rect key="frame" x="139" y="120" width="150" height="35"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v6j-Rg-eLm">
                                 <rect key="frame" x="35" y="323.66666666666669" width="357" height="304.00000000000006"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -262,20 +256,14 @@
                                 </prototypes>
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dkt-MZ-LO1">
-                                <rect key="frame" x="35" y="665.66666666666663" width="357" height="202.33333333333337"/>
+                                <rect key="frame" x="35" y="650" width="357" height="220"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Journal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7e-bl-n5S">
-                                <rect key="frame" x="35" y="636.66666666666663" width="357" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgm-zi-Uv9">
-                                <rect key="frame" x="147" y="163" width="133.33333333333331" height="133.66666666666663"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgm-zi-Uv9">
+                                <rect key="frame" x="147.33333333333331" y="163" width="133.33333333333331" height="133.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zgm-zi-Uv9" secondAttribute="height" multiplier="1:1" id="ryK-oH-gIN"/>
                                 </constraints>
@@ -283,26 +271,38 @@
                                     <segue destination="6G4-6O-FPE" kind="embed" id="1mY-Jw-ldj"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Journal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7e-bl-n5S">
+                                <rect key="frame" x="35" y="621" width="357" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(day #)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYR-M8-jUP">
+                                <rect key="frame" x="139" y="107" width="150" height="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="H7T-hR-w8g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="q7e-bl-n5S" firstAttribute="width" secondItem="v6j-Rg-eLm" secondAttribute="width" id="06L-A0-X3o"/>
-                            <constraint firstItem="v6j-Rg-eLm" firstAttribute="top" secondItem="Zgm-zi-Uv9" secondAttribute="bottom" constant="11" id="2sg-xI-V8M"/>
+                            <constraint firstItem="v6j-Rg-eLm" firstAttribute="top" secondItem="Zgm-zi-Uv9" secondAttribute="bottom" constant="27.000000000000057" id="2sg-xI-V8M"/>
                             <constraint firstItem="PYR-M8-jUP" firstAttribute="centerX" secondItem="H7T-hR-w8g" secondAttribute="centerX" id="3Ah-Kf-WGt"/>
                             <constraint firstItem="v6j-Rg-eLm" firstAttribute="trailing" secondItem="dkt-MZ-LO1" secondAttribute="trailing" id="A1p-Jp-ZIi"/>
                             <constraint firstItem="H7T-hR-w8g" firstAttribute="trailing" secondItem="dkt-MZ-LO1" secondAttribute="trailing" constant="36" id="ACk-Jb-ZKM"/>
-                            <constraint firstItem="PYR-M8-jUP" firstAttribute="top" secondItem="H7T-hR-w8g" secondAttribute="top" constant="32" id="C6y-Fr-26j"/>
-                            <constraint firstItem="H7T-hR-w8g" firstAttribute="bottom" secondItem="dkt-MZ-LO1" secondAttribute="bottom" constant="24" id="DUL-3v-adq"/>
+                            <constraint firstItem="PYR-M8-jUP" firstAttribute="top" secondItem="H7T-hR-w8g" secondAttribute="top" constant="19" id="C6y-Fr-26j"/>
+                            <constraint firstItem="H7T-hR-w8g" firstAttribute="bottom" secondItem="dkt-MZ-LO1" secondAttribute="bottom" constant="22" id="DUL-3v-adq"/>
                             <constraint firstItem="PYR-M8-jUP" firstAttribute="width" secondItem="hvb-YU-JJK" secondAttribute="width" multiplier="0.35" id="IdB-gD-hdE"/>
                             <constraint firstItem="q7e-bl-n5S" firstAttribute="leading" secondItem="v6j-Rg-eLm" secondAttribute="leading" id="K8j-ny-eI1"/>
                             <constraint firstItem="v6j-Rg-eLm" firstAttribute="leading" secondItem="dkt-MZ-LO1" secondAttribute="leading" id="KW5-Pt-aHr"/>
                             <constraint firstItem="dkt-MZ-LO1" firstAttribute="leading" secondItem="H7T-hR-w8g" secondAttribute="leading" constant="35" id="WUn-iZ-sNU"/>
-                            <constraint firstItem="Zgm-zi-Uv9" firstAttribute="top" secondItem="PYR-M8-jUP" secondAttribute="bottom" constant="24" id="Ytq-HZ-lPN"/>
+                            <constraint firstItem="Zgm-zi-Uv9" firstAttribute="top" secondItem="PYR-M8-jUP" secondAttribute="bottom" constant="21" id="Ytq-HZ-lPN"/>
                             <constraint firstItem="v6j-Rg-eLm" firstAttribute="centerY" secondItem="hvb-YU-JJK" secondAttribute="centerY" constant="12.5" id="ZPW-84-Gdn"/>
                             <constraint firstItem="dkt-MZ-LO1" firstAttribute="top" secondItem="q7e-bl-n5S" secondAttribute="bottom" constant="8" id="jpb-Wl-32K"/>
                             <constraint firstItem="q7e-bl-n5S" firstAttribute="trailing" secondItem="v6j-Rg-eLm" secondAttribute="trailing" id="k7u-Kf-2A9"/>
-                            <constraint firstItem="q7e-bl-n5S" firstAttribute="top" secondItem="v6j-Rg-eLm" secondAttribute="bottom" constant="9" id="mZo-KH-VPF"/>
+                            <constraint firstItem="q7e-bl-n5S" firstAttribute="top" secondItem="v6j-Rg-eLm" secondAttribute="bottom" constant="-6.6666666666667425" id="mZo-KH-VPF"/>
                             <constraint firstItem="Zgm-zi-Uv9" firstAttribute="centerX" secondItem="H7T-hR-w8g" secondAttribute="centerX" id="nyq-ks-ffH"/>
                         </constraints>
                     </view>

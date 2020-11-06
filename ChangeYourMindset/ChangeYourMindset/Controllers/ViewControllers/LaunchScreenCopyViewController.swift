@@ -13,7 +13,6 @@ class LaunchScreenCopyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUser()
-
     }
     
     //MARK: - Helper Functions
@@ -24,11 +23,11 @@ class LaunchScreenCopyViewController: UIViewController {
                 if user != nil {
                     self.presentOverviewVC()
                 } else {
-                     self.presentSignUpVC()
+                    self.presentSignUpVC()
                 }
             case .failure(let error):
                 print(error.errorDescription)
-                 self.presentSignUpVC()
+                self.presentSignUpVC()
             }
         }
     }

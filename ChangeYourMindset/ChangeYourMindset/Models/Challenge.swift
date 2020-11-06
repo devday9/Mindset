@@ -12,26 +12,25 @@ struct ChallengeStrings {
     static let recordTypeKey = "Challenge"
     fileprivate static let titleKey = "title"
     fileprivate static let startDateKey = "startDate"
-    fileprivate static let endDateKey = "endDate"
     fileprivate static let isCompleteKey = "isComplete"
     fileprivate static let userReferenceKey = "userReference"
 }
 
 class Challenge {
     let title: String
-    var startDate: Date
+    let startDate: Date
     var endDate: Date {
-        return startDate.addTimeInterval(6480000)
+        return startDate.addingTimeInterval(6480000)
     }
     var isComplete: Bool
-    let days: [Day]
+    var days: [Day]
+    let tasks: [String] = ["10 Pages of Reading", "Drink 1 Gallon of Water", "45 Minute Workout", "15 Minutes of Prayer or Meditation", "Follow a Diet & No Cheat Meals", "No Alcohol/Drugs", "Take Progress Pic" ]
     var recordID: CKRecord.ID
-    var userReference: CKRecord.Reference?
+    var userReference: CKRecord.Reference
     
-    init(title: String = "Chang Your Mindset", startDate: Date = Date(), isComplete: Bool = false, days: [Day], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), userReference: CKRecord.Reference?) {
+    init(title: String = "Chang Your Mindset", startDate: Date = Date(), isComplete: Bool = false, days: [Day] = [], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), userReference: CKRecord.Reference) {
         self.title = title
         self.startDate = startDate
-        self.endDate = endDate
         self.isComplete = isComplete
         self.days = days
         self.recordID = recordID
@@ -45,12 +44,10 @@ extension Challenge {
     convenience init?(ckRecord: CKRecord) {
         guard let title = ckRecord[ChallengeStrings.titleKey] as? String,
               let startDate = ckRecord[ChallengeStrings.startDateKey] as? Date,
-              let endDate = ckRecord[ChallengeStrings.endDateKey] as? Date,
-              let isComplete = ckRecord[ChallengeStrings.isCompleteKey] as? Bool else { return nil }
+              let isComplete = ckRecord[ChallengeStrings.isCompleteKey] as? Bool,
+              let reference = ckRecord[ChallengeStrings.userReferenceKey] as? CKRecord.Reference else { return nil }
         
-        let reference = ckRecord[ChallengeStrings.userReferenceKey] as? CKRecord.Reference
-        
-        self.init(title: title, startDate: startDate, endDate: endDate, isComplete: isComplete, days: [], recordID: ckRecord.recordID, userReference: reference)
+        self.init(title: title, startDate: startDate, isComplete: isComplete, recordID: ckRecord.recordID, userReference: reference)
     }
 }//END OF EXTENSION
 
@@ -67,11 +64,8 @@ extension CKRecord {
         self.setValuesForKeys([
             ChallengeStrings.titleKey : challenge.title,
             ChallengeStrings.startDateKey : challenge.startDate,
-            ChallengeStrings.endDateKey : challenge.endDate
+            ChallengeStrings.isCompleteKey : challenge.isComplete,
+            ChallengeStrings.userReferenceKey : challenge.userReference
         ])
-        
-        if let userReference = challenge.userReference {
-            setValue(userReference, forKey: ChallengeStrings.userReferenceKey)
-        }
     }
 }//END OF EXTENSION

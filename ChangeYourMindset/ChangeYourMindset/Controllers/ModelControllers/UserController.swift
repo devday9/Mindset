@@ -38,7 +38,16 @@ class UserController {
                     }
                     
                     self.currentUser = savedUser
-                    completion(.success(true))
+                    ChallengeController.shared.createChallenge { (result) in
+                        switch result {
+                        case .success(_):
+                            return completion(.success(true))
+                        case .failure(_):
+                            print("Failed to create challenge")
+                            
+                            return completion(.failure(.couldNotUnwrap))
+                        }
+                    }
                 }
                 
             case .failure(let error):
@@ -73,8 +82,16 @@ class UserController {
                     }
                     
                     self.currentUser = fetchedUser
-                    print("Successfully fetched user with id: \(fetchedUser.recordID)")
-                    completion(.success(self.currentUser))
+                    ChallengeController.shared.fetchAllChallenges { (result) in
+                        switch result {
+                        case .success(_):
+                            print("Successfully fetched user with id: \(fetchedUser.recordID)")
+                            completion(.success(self.currentUser))
+                        case .failure(let error):
+                            print(error.errorDescription)
+                            return completion(.failure(.ckError(error)))
+                        }
+                    }
                 }
             case .failure(let error):
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")

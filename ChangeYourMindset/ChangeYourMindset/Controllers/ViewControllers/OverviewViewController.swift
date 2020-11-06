@@ -18,7 +18,6 @@ class OverviewViewController: UIViewController {
     
     //MARK: - Properties
     var viewsLaidOut = false
-//    let privateDB = CKContainer.default().privateCloudDatabase
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -37,7 +36,7 @@ class OverviewViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func clearAllDataButtonTapped(_ sender: Any) {
-//        clearAllData(Day, completion: <#T##(Result<Bool, MindsetError>) -> Void#>)
+        //        clearAllData(Day, completion: <#T##(Result<Bool, MindsetError>) -> Void#>)
     }
     
     //MARK: - Helper Functions
@@ -46,34 +45,35 @@ class OverviewViewController: UIViewController {
         collectionView.backgroundColor = .systemRed
     }
     
-//    func clearAllData(_ days: Day, completion: @escaping (Result<Bool, MindsetError>) -> Void) {
-//
-//        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [days.recordID])
-//
-//        operation.savePolicy = .changedKeys
-//        operation.qualityOfService = .userInteractive
-//        operation.modifyRecordsCompletionBlock = { ( _, recordIDs, error) in
-//
-//            if let error = error {
-//                return completion(.failure(.ckError(error)))
-//            }
-//
-//            guard let recordIDs = recordIDs else { return completion(.failure(.couldNotUnwrap))}
-//            print("\(recordIDs) were removed successfully")
-//            completion(.success(true))
-//        }
-//
-//        privateDB.add(operation)
-//    }
+    //    func clearAllData(_ days: Day, completion: @escaping (Result<Bool, MindsetError>) -> Void) {
+    //
+    //        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [days.recordID])
+    //
+    //        operation.savePolicy = .changedKeys
+    //        operation.qualityOfService = .userInteractive
+    //        operation.modifyRecordsCompletionBlock = { ( _, recordIDs, error) in
+    //
+    //            if let error = error {
+    //                return completion(.failure(.ckError(error)))
+    //            }
+    //
+    //            guard let recordIDs = recordIDs else { return completion(.failure(.couldNotUnwrap))}
+    //            print("\(recordIDs) were removed successfully")
+    //            completion(.success(true))
+    //        }
+    //
+    //        privateDB.add(operation)
+    //    }
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDayVC" {
             guard let indexArray = collectionView.indexPathsForSelectedItems,
-                  let destination = segue.destination as? DayViewController
+                  let destination = segue.destination as? DayViewController,
+                  let days = ChallengeController.shared.currentChallenge?.days
             else { return }
             let indexPath = indexArray[0]
-            destination.day = DayController.shared.days[indexPath.row]
+            destination.day = days[indexPath.row]
         }
     }
 }//END OF CLASS
@@ -82,12 +82,17 @@ class OverviewViewController: UIViewController {
 extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DayController.shared.days.count
+        if let days = ChallengeController.shared.currentChallenge?.days {
+            return days.count
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as? DayCollectionViewCell else { return UICollectionViewCell() }
-        cell.dayLabel.text = String(DayController.shared.days[indexPath.row].dayNumber)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as? DayCollectionViewCell,
+              let days = ChallengeController.shared.currentChallenge?.days else { return UICollectionViewCell() }
+        cell.dayLabel.text = String(days[indexPath.row].dayNumber)
         cell.dayLabel.textColor = .white
         
         return cell

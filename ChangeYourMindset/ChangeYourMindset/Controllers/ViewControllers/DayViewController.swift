@@ -55,7 +55,7 @@ class DayViewController: UIViewController {
         bodyTextView.textContainerInset.bottom = 12
         bodyTextView.textContainerInset.left = 12
         bodyTextView.textContainerInset.right = 12
-//        taskTableView.layer.cornerRadius = 32
+        //        taskTableView.layer.cornerRadius = 32
         taskTableView.backgroundColor = .white
         taskTableView.isScrollEnabled = false
         dayNumberLabel.text = "Day \(day.dayNumber)"
@@ -79,15 +79,15 @@ class DayViewController: UIViewController {
 extension DayViewController: PhotoSelectorDelegate {
     func photoPickerSelected(image: UIImage) {
         self.image = image
-//        TaskController.shared.update(task: <#T##Task#>, progressPhoto: <#T##UIImage?#>)
+        //        TaskController.shared.update(task: <#T##Task#>, progressPhoto: <#T##UIImage?#>)
     }
 }//END OF EXTENSION
 
 extension DayViewController: UITableViewDelegate, UITableViewDataSource {
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return self.view.frame.height / 7
-//    }
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return self.view.frame.height / 24
+        }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TaskController.shared.tasks.count
@@ -96,7 +96,7 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskTableViewCell else { return UITableViewCell() }
-       
+        
         cell.delegate = self
         
         let taskToDisplay = TaskController.shared.tasks[indexPath.row]
@@ -110,7 +110,7 @@ extension DayViewController: TaskCellDelegate {
     func completeButtonTapped(sender: TaskTableViewCell) {
         guard let task = sender.task else { return }
         TaskController.shared.toggleComplete(task: task)
-
+        
         sender.task = task
     }
 }//END OF EXTENSION

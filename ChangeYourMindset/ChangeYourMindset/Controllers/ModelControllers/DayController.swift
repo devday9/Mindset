@@ -13,46 +13,44 @@ class DayController {
     //MARK: - Properties
     let privateDB = CKContainer.default().privateCloudDatabase
     static let shared = DayController()
-    var days: [Day] = []
-
-    init() {
-        createDays(numberOfDays: 75)
-    }
     
     //MARK: - CRUD Functions
-    func createDays(numberOfDays: Int) {
+    func createDays(numberOfDays: Int, completion: @escaping (Result<[Day], MindsetError>) -> Void) {
         
-        guard let user = UserController.shared.currentUser else { return }
+        guard let challenge = ChallengeController.shared.currentChallenge else { return }
         
-        let reference = CKRecord.Reference(recordID: user.recordID, action: .none)
+        let reference = CKRecord.Reference(recordID: challenge.recordID, action: .deleteSelf)
         
-        for day in 1...numberOfDays {
-            let day = Day(dayNumber: day, dailyJournal: "", allTasksAreComplete: false, tasks: [], challengeReference: reference, userReference: reference, dailyProgressPhoto: nil)
+        var days: [Day] = []
+        
+        let dispatchGroup = DispatchGroup()
+        
+        for dayNumber in 1...numberOfDays {
+            dispatchGroup.enter()
+            let day = Day(dayNumber: dayNumber, challengeReference: reference)
             
-            save(day: day) { (result) in
+            let dayRecord = CKRecord(day: day)
+            
+            privateDB.save(dayRecord) { (record, error) in
+                if let error = error {
+                    completion(.failure(.ckError(error)))
+                }
+                
+                guard let record = record,
+                      let savedDay = Day(ckrecord: record) else { return completion(.failure(.couldNotUnwrap))}
+                print("Saved day successfully")
+                
+                days.append(savedDay)
+                dispatchGroup.leave()
             }
-            days.append(day)
+        }
+        dispatchGroup.notify(queue: .main) {
+            print("DispatchGroup.notify about to complete success days")
+            completion(.success(days))
         }
     }
     
-    func save(day: Day, completion: @escaping (Result<Day, MindsetError>) -> Void) {
-        
-        let dayRecord = CKRecord(day: day)
-        
-        privateDB.save(dayRecord) { (record, error) in
-            if let error = error {
-                completion(.failure(.ckError(error)))
-            }
-            
-            guard let record = record,
-                  let savedDay = Day(ckrecord: record) else { return completion(.failure(.couldNotUnwrap))}
-            print("Saved day successfully")
-            
-            completion(.success(savedDay))
-        }
-    }
-    
-    func fetchAllDays(completion: @escaping (Result<[Day]?, MindsetError>) -> Void) {
+    func fetchAllDays(completion: @escaping (Result<[Day], MindsetError>) -> Void) {
         
         let fetchAllPredicate = NSPredicate(value: true)
         let query = CKQuery(recordType: DayStrings.recordTypeKey, predicate: fetchAllPredicate)
@@ -66,7 +64,8 @@ class DayController {
             print("Fetched Days successfully")
             
             let fetchedDays = records.compactMap({ Day(ckrecord: $0) })
-            completion(.success(fetchedDays))
+            let sortedDays = fetchedDays.sorted(by: {$0.dayNumber < $1.dayNumber})
+            completion(.success(sortedDays))
         }
     }
     
