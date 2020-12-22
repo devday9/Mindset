@@ -71,7 +71,7 @@
 		C336910E254B64320073035C /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
 		C3369117254BB8400073035C /* ChallengeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeController.swift; sourceTree = "<group>"; };
-		C33D8C062543640300CEE37D /* ChangeYourMindset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeYourMindset.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33D8C062543640300CEE37D /* CYM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33D8C092543640300CEE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C33D8C0B2543640300CEE37D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C33D8C102543640300CEE37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		C33D8C072543640300CEE37D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C33D8C062543640300CEE37D /* ChangeYourMindset.app */,
+				C33D8C062543640300CEE37D /* CYM.app */,
 				C3D64CB025530EA600AED4AE /* DayTableViewWidgetExtension.appex */,
 			);
 			name = Products;
@@ -273,9 +273,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C33D8C052543640300CEE37D /* ChangeYourMindset */ = {
+		C33D8C052543640300CEE37D /* CYM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C33D8C1A2543640300CEE37D /* Build configuration list for PBXNativeTarget "ChangeYourMindset" */;
+			buildConfigurationList = C33D8C1A2543640300CEE37D /* Build configuration list for PBXNativeTarget "CYM" */;
 			buildPhases = (
 				C33D8C022543640300CEE37D /* Sources */,
 				C33D8C032543640300CEE37D /* Frameworks */,
@@ -287,9 +287,9 @@
 			dependencies = (
 				C3D64CBA25530EA700AED4AE /* PBXTargetDependency */,
 			);
-			name = ChangeYourMindset;
+			name = CYM;
 			productName = ChangeYourMindset;
-			productReference = C33D8C062543640300CEE37D /* ChangeYourMindset.app */;
+			productReference = C33D8C062543640300CEE37D /* CYM.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C3D64CAF25530EA600AED4AE /* DayTableViewWidgetExtension */ = {
@@ -339,7 +339,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C33D8C052543640300CEE37D /* ChangeYourMindset */,
+				C33D8C052543640300CEE37D /* CYM */,
 				C3D64CAF25530EA600AED4AE /* DayTableViewWidgetExtension */,
 			);
 		};
@@ -658,7 +658,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C33D8C1A2543640300CEE37D /* Build configuration list for PBXNativeTarget "ChangeYourMindset" */ = {
+		C33D8C1A2543640300CEE37D /* Build configuration list for PBXNativeTarget "CYM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C33D8C1B2543640300CEE37D /* Debug */,
