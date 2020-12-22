@@ -70,7 +70,6 @@ class Day {
         self.challengeReference = challengeReference
         self.dailyProgressPhoto = dailyProgressPhoto
     }
-    
 }//END OF CLASS
 
 //MARK: - Extensions

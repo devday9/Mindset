@@ -12,14 +12,15 @@ protocol TaskCellDelegate {
 }
 
 class TaskTableViewCell: UITableViewCell {
-
+    
     //MARK: - Outlets
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
     
-    weak var delegate: DayViewController?
+    //    weak var delegate: DayViewController?
     
-    var task: Task? {
+    var index: Int?
+    var day: Day? {
         didSet {
             updateViews()
             setupViews()
@@ -27,15 +28,25 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     func updateViews() {
-        taskLabel.text = task?.name
+        guard let day = day, let index = index, let challenge = ChallengeController.shared.currentChallenge
+        else { return }
         
-        let imageName = (task?.isComplete ?? false) ? "complete" : "incomplete"
-        completeButton.setImage(UIImage(named: imageName), for: .normal)
+        taskLabel.text = challenge.tasks[index]
+        if day.tasksCompleted[index] {
+            taskLabel.textColor = .red
+        } else {
+            taskLabel.textColor = .black
+        }
+        
+        let imageName = day.tasksCompleted[index] ? "complete" : "incomplete"
+        DispatchQueue.main.async {
+            self.completeButton.setImage(UIImage(named: imageName), for: .normal)
+        }
     }
     
     //MARK: - Actions
     @IBAction func completeButtonTapped(_ sender: Any) {
-        delegate?.completeButtonTapped(sender: self)
+        //        delegate?.completeButtonTapped(sender: self)
         taskComplete()
     }
     
@@ -46,15 +57,28 @@ class TaskTableViewCell: UITableViewCell {
     
     func taskComplete() {
         
-        guard let task = task else { return }
+        guard let day = day, let index = index, let challenge = ChallengeController.shared.currentChallenge else { return }
         
-        if task.isComplete {
-//            self.backgroundColor = .black
-            taskLabel.textColor = .red
-            
-        } else {
-            self.backgroundColor = .white
-            taskLabel.textColor = .black
+        day.tasksCompleted[index] = !day.tasksCompleted[index]
+        
+        DayController.shared.update(day) { (result) in
+            switch result {
+            case .success(_):
+                if day.tasksCompleted[index] {
+                    DispatchQueue.main.async {
+                        self.taskLabel.textColor = .red
+                        self.updateViews()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.updateViews()
+                        self.backgroundColor = .white
+                        self.taskLabel.textColor = .black
+                    }
+                }
+            case .failure(let error):
+                print(error.errorDescription)
+            }
         }
     }
 }//END OF CLASS

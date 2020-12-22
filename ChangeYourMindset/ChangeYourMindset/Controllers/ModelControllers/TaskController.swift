@@ -18,7 +18,7 @@ class TaskController {
     var currentTask: Task?
     
     var tasks: [Task] {
-       
+        
         let readTenPages = Task(name: "10 Pages of Reading", isComplete: false, dayReference: nil, challengeReference: nil, progressPhoto: nil)
         
         let drinkOneGallon = Task(name: "Drink 1 Gallon of Water", isComplete: false, dayReference: nil, challengeReference: nil, progressPhoto: nil)

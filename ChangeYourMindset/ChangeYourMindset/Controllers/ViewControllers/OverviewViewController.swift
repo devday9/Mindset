@@ -43,6 +43,7 @@ class OverviewViewController: UIViewController {
     func setupViews() {
         self.view.backgroundColor = .systemRed
         collectionView.backgroundColor = .systemRed
+        collectionView.isScrollEnabled = false
     }
     
     //    func clearAllData(_ days: Day, completion: @escaping (Result<Bool, MindsetError>) -> Void) {
@@ -91,9 +92,17 @@ extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as? DayCollectionViewCell,
-              let days = ChallengeController.shared.currentChallenge?.days else { return UICollectionViewCell() }
-        cell.dayLabel.text = String(days[indexPath.row].dayNumber)
-        cell.dayLabel.textColor = .white
+              let currentChallenge = ChallengeController.shared.currentChallenge
+              else { return UICollectionViewCell() }
+        let days = currentChallenge.days
+        let day = days[indexPath.row]
+//        let dayNotInFuture = day.dayNumber <= currentChallenge.daysSinceStartDate
+        
+//        print("\(day) \(dayNotInFuture) \(currentChallenge.daysSinceStartDate) \(currentChallenge.startDate)")
+        
+        cell.dayLabel.text = String(day.dayNumber)
+//        cell.isUserInteractionEnabled = dayNotInFuture
+//        cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
         
         return cell
     }

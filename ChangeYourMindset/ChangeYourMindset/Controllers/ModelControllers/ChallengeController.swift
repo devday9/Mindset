@@ -42,15 +42,17 @@ class ChallengeController {
                 switch result {
                 case .success(let days):
                     self.currentChallenge?.days = days
+                    
                 case .failure(let error):
                     print(error.errorDescription)
+                    return completion(.failure(.ckError(error)))
                 }
             }
-            
             completion(.success(savedChallenge))
         }
     }
     
+    //MARK: - Fetch
     func fetchAllChallenges(completion: @escaping (Result<Challenge, MindsetError>) -> Void) {
         
         let fetchAllPredicate = NSPredicate(value: true)

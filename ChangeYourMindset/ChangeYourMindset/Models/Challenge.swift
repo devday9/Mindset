@@ -18,7 +18,7 @@ struct ChallengeStrings {
 
 class Challenge {
     let title: String
-    let startDate: Date
+    var startDate: Date
     var endDate: Date {
         return startDate.addingTimeInterval(6480000)
     }
@@ -35,6 +35,11 @@ class Challenge {
         self.days = days
         self.recordID = recordID
         self.userReference = userReference
+    }
+    
+    var daysSinceStartDate: Int {
+        Int(Date().timeIntervalSince(startDate) / (24 * 60 * 60))
+        //        (Date().timeIntervalSince(startDate) / (24 * 60 * 60))
     }
 }//END OF CLASS
 

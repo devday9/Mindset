@@ -14,42 +14,27 @@ class DayController {
     let privateDB = CKContainer.default().privateCloudDatabase
     static let shared = DayController()
     
-    //MARK: - CRUD Functions
+    //MARK: - Helper Functions
     func createDays(numberOfDays: Int, completion: @escaping (Result<[Day], MindsetError>) -> Void) {
         
         guard let challenge = ChallengeController.shared.currentChallenge else { return }
         
         let reference = CKRecord.Reference(recordID: challenge.recordID, action: .deleteSelf)
         
-        var days: [Day] = []
-        
-        let dispatchGroup = DispatchGroup()
-        
-        for dayNumber in 1...numberOfDays {
-            dispatchGroup.enter()
-            let day = Day(dayNumber: dayNumber, challengeReference: reference)
-            
-            let dayRecord = CKRecord(day: day)
-            
-            privateDB.save(dayRecord) { (record, error) in
-                if let error = error {
-                    completion(.failure(.ckError(error)))
-                }
-                
-                guard let record = record,
-                      let savedDay = Day(ckrecord: record) else { return completion(.failure(.couldNotUnwrap))}
-                print("Saved day successfully")
-                
-                days.append(savedDay)
-                dispatchGroup.leave()
+        let days: [Day] = (1...numberOfDays).compactMap {Day(dayNumber: $0, challengeReference: reference)}
+        let dayRecords = days.compactMap {CKRecord(day: $0)}
+        completion(.success(days))
+        //ASK AARON ABOUT THIS
+        let operation = CKModifyRecordsOperation(recordsToSave: dayRecords, recordIDsToDelete: nil)
+        operation.modifyRecordsCompletionBlock = { records, recordIDs, error in
+            if let error = error {
+                completion(.failure(.ckError(error)))
             }
         }
-        dispatchGroup.notify(queue: .main) {
-            print("DispatchGroup.notify about to complete success days")
-            completion(.success(days))
-        }
+        privateDB.add(operation)
     }
     
+    //MARK: - Fetch
     func fetchAllDays(completion: @escaping (Result<[Day], MindsetError>) -> Void) {
         
         let fetchAllPredicate = NSPredicate(value: true)
@@ -69,6 +54,7 @@ class DayController {
         }
     }
     
+    //MARK: - Update
     func update(_ day: Day, completion: @escaping (Result<Day, MindsetError>) -> Void) {
         
         let recordToUpdate = CKRecord(day: day)
