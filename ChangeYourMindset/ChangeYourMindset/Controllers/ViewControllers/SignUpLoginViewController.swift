@@ -53,14 +53,14 @@ class SignUpLoginViewController: UIViewController {
     
     //MARK: - Helper Functions
     func setupViews() {
-        setupNameTextField()
-        setupPasswordTextField()
         setupConfirmPasswordTextField()
+        setupViewBackgroundColor()
+        setupPasswordTextField()
         setupCreateUserButton()
+        setupContainerView()
+        setupNameTextField()
         setupSignUpButton()
         setupLoginButton()
-        setupContainerView()
-        setupViewBackgroundColor()
         dismissKeyboard()
     }
     
