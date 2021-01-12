@@ -37,13 +37,16 @@ class DayViewController: UIViewController {
     
     //MARK: - Helper Functions
     func setupViews() {
-        guard let day = day else { return }
+        setupBodyTextView()
+        setupContainerView()
+        setupTaskTableView()
+        setupDayNumberLabel()
         
-        view.backgroundColor = .white
-        containerView.addAccentBorder()
-        containerView.contentMode = .scaleToFill
-        containerView.layer.cornerRadius = 32
-        containerView.clipsToBounds = true
+        dismissKeyboard()
+    }
+    
+    //MARK: - Views
+    func setupBodyTextView() {
         bodyTextView.addAccentBorder()
         bodyTextView.backgroundColor = .white
         bodyTextView.textColor = .black
@@ -55,14 +58,28 @@ class DayViewController: UIViewController {
         bodyTextView.textContainerInset.bottom = 12
         bodyTextView.textContainerInset.left = 12
         bodyTextView.textContainerInset.right = 12
+    }
+    
+    func setupContainerView() {
+        containerView.addAccentBorder()
+        containerView.contentMode = .scaleToFill
+        containerView.layer.cornerRadius = 32
+        containerView.clipsToBounds = true
+    }
+    
+    func setupTaskTableView() {
         taskTableView.backgroundColor = .white
         taskTableView.isScrollEnabled = false
-        dismissKeyboard()
+    }
+    
+    func setupDayNumberLabel() {
+        guard let day = day else
+        { return }
+        
         dayNumberLabel.text = "Day \(day.dayNumber)"
     }
     
     func dismissKeyboard() {
-        
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
@@ -85,7 +102,6 @@ class DayViewController: UIViewController {
 extension DayViewController: PhotoSelectorDelegate {
     func photoPickerSelected(image: UIImage) {
         self.image = image
-        //        TaskController.shared.update(task: <#T##Task#>, progressPhoto: <#T##UIImage?#>)
     }
 }//END OF EXTENSION
 

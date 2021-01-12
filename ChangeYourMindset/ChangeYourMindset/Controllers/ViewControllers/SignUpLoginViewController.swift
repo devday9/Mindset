@@ -40,7 +40,7 @@ class SignUpLoginViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func createUserButtonTapped(_ sender: Any) {
-       createUser()
+        createUser()
     }
     
     @IBAction func logInButtonTapped(_ sender: Any) {
