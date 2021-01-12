@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C33D8C052543640300CEE37D"
-               BuildableName = "CYM.app"
-               BlueprintName = "CYM"
+               BuildableName = "ChangeYourMindset.app"
+               BlueprintName = "ChangeYourMindset"
                ReferencedContainer = "container:ChangeYourMindset.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C33D8C052543640300CEE37D"
-            BuildableName = "CYM.app"
-            BlueprintName = "CYM"
+            BuildableName = "ChangeYourMindset.app"
+            BlueprintName = "ChangeYourMindset"
             ReferencedContainer = "container:ChangeYourMindset.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C33D8C052543640300CEE37D"
-            BuildableName = "CYM.app"
-            BlueprintName = "CYM"
+            BuildableName = "ChangeYourMindset.app"
+            BlueprintName = "ChangeYourMindset"
             ReferencedContainer = "container:ChangeYourMindset.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
