@@ -41,7 +41,7 @@ class DayViewController: UIViewController {
         setupContainerView()
         setupTaskTableView()
         setupDayNumberLabel()
-        
+        setupBackgroundColor()
         dismissKeyboard()
     }
     
@@ -77,6 +77,10 @@ class DayViewController: UIViewController {
         { return }
         
         dayNumberLabel.text = "Day \(day.dayNumber)"
+    }
+    
+    func setupBackgroundColor() {
+        view.backgroundColor = .white
     }
     
     func dismissKeyboard() {
