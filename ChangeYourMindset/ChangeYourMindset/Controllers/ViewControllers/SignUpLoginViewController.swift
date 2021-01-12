@@ -23,6 +23,7 @@ class SignUpLoginViewController: UIViewController {
     //MARK: - Properties
     var image: UIImage?
     var viewsLaidOut = false
+    var SignUpAlertMessage = "Please enter all information to register."
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -39,19 +40,7 @@ class SignUpLoginViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func createUserButtonTapped(_ sender: Any) {
-        guard let username = usernameTextField.text, !username.isEmpty,
-              let password = enterPasswordTextField.text, !password.isEmpty,
-              let confirmPassword = confirmPasswordTextField.text,
-              password == confirmPassword else { return }
-        
-        UserController.shared.createUser(username: username, profilePhoto: image) { (result) in
-            switch result {
-            case .success(_):
-                self.presentOverviewVC()
-            case .failure(let error):
-                print(error.errorDescription)
-            }
-        }
+       createUser()
     }
     
     @IBAction func logInButtonTapped(_ sender: Any) {
@@ -64,23 +53,15 @@ class SignUpLoginViewController: UIViewController {
     
     //MARK: - Helper Functions
     func setupViews() {
-        self.view.backgroundColor = .lightGray
-        containerView.clipsToBounds = true
-        containerView.addCornerRadius(radius: containerView.frame.height / 2)
-        loginButton.rotate()
-        signUpButton.rotate()
-        signUpButton.tintColor = .white
-        loginButton.tintColor = .white
-        usernameTextField.addAccentBorder()
-        enterPasswordTextField.addAccentBorder()
-        confirmPasswordTextField.addAccentBorder()
-        enterPasswordTextField.layer.cornerRadius = 15
-        usernameTextField.layer.cornerRadius = 15
-        confirmPasswordTextField.layer.cornerRadius = 15
-        self.enterPasswordTextField.isSecureTextEntry = true
-        self.confirmPasswordTextField.isSecureTextEntry = true
-        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tapGesture)
+        setupNameTextField()
+        setupPasswordTextField()
+        setupConfirmPasswordTextField()
+        setupCreateUserButton()
+        setupSignUpButton()
+        setupLoginButton()
+        setupContainerView()
+        setupViewBackgroundColor()
+        dismissKeyboard()
     }
     
     func toggleToLogIn() {
@@ -109,6 +90,90 @@ class SignUpLoginViewController: UIViewController {
         }
     }
     
+    func createUser() {
+        guard let username = usernameTextField.text, !username.isEmpty,
+              let password = enterPasswordTextField.text, !password.isEmpty,
+              let confirmPassword = confirmPasswordTextField.text,
+              password == confirmPassword else {
+            alertUserSignUpError()
+            return
+        }
+        
+        guard password.count >= 6 else {
+            SignUpAlertMessage = SignUpAlertStrings.passwordCharacterCountKey
+            alertUserSignUpError()
+            return
+        }
+        
+        UserController.shared.createUser(username: username, profilePhoto: image) { (result) in
+            switch result {
+            case .success(_):
+                self.presentOverviewVC()
+            case .failure(let error):
+                print(error.errorDescription)
+            }
+        }
+    }
+    
+    //MARK: - Views
+    func setupNameTextField(){
+        usernameTextField.autocapitalizationType = .none
+        usernameTextField.returnKeyType = .continue
+        usernameTextField.autocorrectionType = .no
+        usernameTextField.layer.cornerRadius = 5
+        usernameTextField.addAccentBorder()
+    }
+    
+    func setupPasswordTextField(){
+        enterPasswordTextField.autocapitalizationType = .none
+        enterPasswordTextField.returnKeyType = .continue
+        enterPasswordTextField.autocorrectionType = .no
+        enterPasswordTextField.isSecureTextEntry = true
+        enterPasswordTextField.layer.cornerRadius = 5
+        enterPasswordTextField.addAccentBorder()
+    }
+    
+    func setupConfirmPasswordTextField(){
+        confirmPasswordTextField.autocapitalizationType = .none
+        confirmPasswordTextField.autocorrectionType = .no
+        confirmPasswordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.layer.cornerRadius = 5
+        confirmPasswordTextField.returnKeyType = .done
+        confirmPasswordTextField.addAccentBorder()
+    }
+    
+    func setupCreateUserButton() {
+        createUserButton.backgroundColor = .darkGray
+        createUserButton.layer.cornerRadius = 5
+        createUserButton.tintColor = .red
+        createUserButton.addAccentBorder()
+    }
+    
+    func setupSignUpButton() {
+        signUpButton.tintColor = .white
+        signUpButton.rotate()
+    }
+    
+    func setupLoginButton() {
+        loginButton.tintColor = .white
+        loginButton.rotate()
+    }
+    
+    func setupContainerView() {
+        containerView.addCornerRadius(radius: containerView.frame.height / 2)
+        containerView.clipsToBounds = true
+    }
+    
+    func setupViewBackgroundColor() {
+        view.backgroundColor = .lightGray
+    }
+    
+    func dismissKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPhotoPickerVC" {
             let destinationVC = segue.destination as? PhotoPickerViewController

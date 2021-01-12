@@ -18,6 +18,7 @@
 		C33D8C162543640300CEE37D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D8C142543640300CEE37D /* LaunchScreen.storyboard */; };
 		C33D8C242543643D00CEE37D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33D8C232543643D00CEE37D /* CloudKit.framework */; };
 		C33D8C362543663D00CEE37D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D8C352543663D00CEE37D /* User.swift */; };
+		C352DC5725AE18E6008B9B30 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352DC5625AE18E6008B9B30 /* Alerts.swift */; };
 		C3D64C59254CB1A700AED4AE /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D64C58254CB1A700AED4AE /* DayController.swift */; };
 		C3D64C5C254CE1EB00AED4AE /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D64C5B254CE1EB00AED4AE /* TaskController.swift */; };
 		C3D64CB125530EA600AED4AE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D64C6B2552242500AED4AE /* WidgetKit.framework */; };
@@ -81,6 +82,7 @@
 		C33D8C212543643900CEE37D /* ChangeYourMindset.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChangeYourMindset.entitlements; sourceTree = "<group>"; };
 		C33D8C232543643D00CEE37D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C33D8C352543663D00CEE37D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C352DC5625AE18E6008B9B30 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		C3D64C58254CB1A700AED4AE /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 		C3D64C5B254CE1EB00AED4AE /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		C3D64C6B2552242500AED4AE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -185,6 +187,7 @@
 			children = (
 				C3F58D8625473C5D002BF456 /* MindsetError.swift */,
 				C3F58DC425491A77002BF456 /* StyleGuide.swift */,
+				C352DC5625AE18E6008B9B30 /* Alerts.swift */,
 			);
 			path = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				C3369113254B773B0073035C /* LaunchScreenCopyViewController.swift in Sources */,
 				C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */,
 				C3F58DAA2548DCA9002BF456 /* SignUpLoginViewController.swift in Sources */,
+				C352DC5725AE18E6008B9B30 /* Alerts.swift in Sources */,
 				C3D64C59254CB1A700AED4AE /* DayController.swift in Sources */,
 				C3369118254BB8400073035C /* ChallengeController.swift in Sources */,
 				C3F58D8425473AC3002BF456 /* UserController.swift in Sources */,

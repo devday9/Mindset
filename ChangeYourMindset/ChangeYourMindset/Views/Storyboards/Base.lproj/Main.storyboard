@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lq9-kO-hLL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lq9-kO-hLL">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -111,7 +111,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNB-dI-kKP">
-                                <rect key="frame" x="226" y="611" width="107" height="46.333333333333371"/>
+                                <rect key="frame" x="159.33333333333337" y="603" width="149.66666666666663" height="46.333333333333371"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sign Me Up"/>
                                 <connections>
@@ -132,24 +132,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LU4-NG-tHk" firstAttribute="leading" secondItem="uju-TY-wmp" secondAttribute="leading" id="3XC-92-2ye"/>
-                            <constraint firstItem="pNB-dI-kKP" firstAttribute="centerX" secondItem="mxh-iD-wz6" secondAttribute="centerX" id="Ab9-Rp-edK"/>
                             <constraint firstItem="uju-TY-wmp" firstAttribute="top" secondItem="LU4-NG-tHk" secondAttribute="bottom" constant="96" id="Dg6-aD-2pk"/>
+                            <constraint firstItem="pNB-dI-kKP" firstAttribute="centerX" secondItem="m0z-J1-P1p" secondAttribute="centerX" id="N3d-Mo-HA7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m0z-J1-P1p" secondAttribute="trailing" constant="-10.5" id="NNZ-pI-doW"/>
                             <constraint firstItem="uju-TY-wmp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="OlV-vj-cha"/>
                             <constraint firstItem="pNB-dI-kKP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="SBU-Jw-4i1"/>
                             <constraint firstItem="LU4-NG-tHk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="96" id="Z5h-vA-9ye"/>
                             <constraint firstItem="LU4-NG-tHk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="g2P-Ab-yLz"/>
-                            <constraint firstItem="pNB-dI-kKP" firstAttribute="top" secondItem="m0z-J1-P1p" secondAttribute="bottom" constant="40" id="gEP-A4-0aj"/>
+                            <constraint firstItem="pNB-dI-kKP" firstAttribute="top" secondItem="m0z-J1-P1p" secondAttribute="bottom" constant="32" id="gEP-A4-0aj"/>
                             <constraint firstItem="uju-TY-wmp" firstAttribute="trailing" secondItem="m0z-J1-P1p" secondAttribute="trailing" id="mEk-UH-WUN"/>
                             <constraint firstItem="m0z-J1-P1p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="pGW-kR-eft"/>
                             <constraint firstItem="m0z-J1-P1p" firstAttribute="top" secondItem="uju-TY-wmp" secondAttribute="bottom" constant="40" id="ttU-4K-8hx"/>
-                            <constraint firstItem="pNB-dI-kKP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.25" id="tu6-kJ-PHz"/>
+                            <constraint firstItem="pNB-dI-kKP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.35" id="tu6-kJ-PHz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="YmW-SW-iF1" id="dVN-n7-QXy"/>
                         <outlet property="containerView" destination="LU4-NG-tHk" id="GD2-Ij-Mbx"/>
-                        <outlet property="createUserButton" destination="pNB-dI-kKP" id="yAH-gZ-BZu"/>
+                        <outlet property="createUserButton" destination="pNB-dI-kKP" id="Pyt-H6-Zxo"/>
                         <outlet property="descriptionLabel" destination="dIy-e1-FOx" id="D1y-nw-toH"/>
                         <outlet property="enterPasswordTextField" destination="L2N-LP-IYN" id="yhk-FM-pRC"/>
                         <outlet property="loginButton" destination="zzY-UR-QG3" id="aOT-zU-WjA"/>
