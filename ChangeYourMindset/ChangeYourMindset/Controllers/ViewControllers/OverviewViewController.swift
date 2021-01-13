@@ -46,25 +46,26 @@ class OverviewViewController: UIViewController {
         collectionView.isScrollEnabled = false
     }
     
-    //    func clearAllData(_ days: Day, completion: @escaping (Result<Bool, MindsetError>) -> Void) {
-    //
-    //        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [days.recordID])
-    //
-    //        operation.savePolicy = .changedKeys
-    //        operation.qualityOfService = .userInteractive
-    //        operation.modifyRecordsCompletionBlock = { ( _, recordIDs, error) in
-    //
-    //            if let error = error {
-    //                return completion(.failure(.ckError(error)))
-    //            }
-    //
-    //            guard let recordIDs = recordIDs else { return completion(.failure(.couldNotUnwrap))}
-    //            print("\(recordIDs) were removed successfully")
-    //            completion(.success(true))
-    //        }
-    //
-    //        privateDB.add(operation)
-    //    }
+    // THIS BELONGS ON A MODEL CONTROLLER FOR OVERVIEWVC?
+//        func clearAllData(_ days: Day, completion: @escaping (Result<Bool, MindsetError>) -> Void) {
+//
+//            let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [days.recordID])
+//
+//            operation.savePolicy = .changedKeys
+//            operation.qualityOfService = .userInteractive
+//            operation.modifyRecordsCompletionBlock = { ( _, recordIDs, error) in
+//
+//                if let error = error {
+//                    return completion(.failure(.ckError(error)))
+//                }
+//
+//                guard let recordIDs = recordIDs else { return completion(.failure(.couldNotUnwrap))}
+//                print("\(recordIDs) were removed successfully")
+//                completion(.success(true))
+//            }
+//
+//            privateDB.add(operation)
+//        }
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
