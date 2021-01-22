@@ -53,9 +53,12 @@ class ChallengeController {
     }
     
     //MARK: - Fetch
-    func fetchAllChallenges(completion: @escaping (Result<Challenge, MindsetError>) -> Void) {
+    func fetchChallengesForUser(completion: @escaping (Result<Challenge, MindsetError>) -> Void) {
+       
+        guard let user = UserController.shared.currentUser else {
+            return completion(.failure(.couldNotUnwrap))}
         
-        let fetchAllPredicate = NSPredicate(value: true)
+        let fetchAllPredicate = NSPredicate(format: "%K == %@", argumentArray: [ChallengeStrings.userReferenceKey, user.recordID])
         let query = CKQuery(recordType: ChallengeStrings.recordTypeKey, predicate: fetchAllPredicate)
         
         privateDB.perform(query, inZoneWith: nil) { (records, error) in

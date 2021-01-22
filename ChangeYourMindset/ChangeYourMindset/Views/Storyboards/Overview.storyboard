@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIV-IX-0sJ">
-                                <rect key="frame" x="0.0" y="564.33333333333337" width="390" height="279.66666666666663"/>
+                                <rect key="frame" x="0.0" y="584.33333333333337" width="390" height="259.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dp-nc-bRF">
                                         <rect key="frame" x="137.66666666666666" y="5.0000000000000018" width="114.66666666666666" height="27.666666666666671"/>
@@ -110,10 +110,10 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RJr-wy-UdC">
-                                <rect key="frame" x="17.333333333333343" y="164.33333333333337" width="355.33333333333326" height="400"/>
+                                <rect key="frame" x="17.333333333333343" y="164.33333333333337" width="355.33333333333326" height="420"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="nPa-vb-v9H"/>
+                                    <constraint firstAttribute="height" constant="420" id="nPa-vb-v9H"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qL1-km-BUX">
                                     <size key="itemSize" width="40" height="40"/>
