@@ -14,6 +14,8 @@ class DayViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var taskTableView: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     
     //MARK: - Properties
     var image: UIImage?
@@ -25,6 +27,7 @@ class DayViewController: UIViewController {
         super.viewDidLoad()
         taskTableView.dataSource = self
         taskTableView.delegate = self
+        addObserver()
     }
     
     override func viewDidLayoutSubviews() {
@@ -35,6 +38,10 @@ class DayViewController: UIViewController {
         }
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     //MARK: - Helper Functions
     func setupViews() {
         setupBodyTextView()
@@ -43,6 +50,24 @@ class DayViewController: UIViewController {
         setupDayNumberLabel()
         setupBackgroundColor()
         dismissKeyboard()
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillAppear(notification: Notification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            scrollView.contentOffset = CGPoint(x: 0, y: keyboardSize.height)
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        
+        scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
     //MARK: - Views

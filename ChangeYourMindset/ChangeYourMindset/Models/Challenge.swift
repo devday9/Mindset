@@ -9,11 +9,11 @@ import UIKit
 import CloudKit
 
 struct ChallengeStrings {
+    static let userReferenceKey = "userReference"
     static let recordTypeKey = "Challenge"
     fileprivate static let titleKey = "title"
     fileprivate static let startDateKey = "startDate"
     fileprivate static let isCompleteKey = "isComplete"
-    fileprivate static let userReferenceKey = "userReference"
 }
 
 class Challenge {

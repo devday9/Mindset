@@ -82,7 +82,7 @@ class UserController {
                     }
                     
                     self.currentUser = fetchedUser
-                    ChallengeController.shared.fetchAllChallenges { (result) in
+                    ChallengeController.shared.fetchChallengesForUser { (result) in
                         switch result {
                         case .success(_):
                             print("Successfully fetched user with id: \(fetchedUser.recordID)")

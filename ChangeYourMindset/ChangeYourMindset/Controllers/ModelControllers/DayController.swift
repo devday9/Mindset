@@ -37,7 +37,10 @@ class DayController {
     //MARK: - Fetch
     func fetchAllDays(completion: @escaping (Result<[Day], MindsetError>) -> Void) {
         
-        let fetchAllPredicate = NSPredicate(value: true)
+        guard let challenge = ChallengeController.shared.currentChallenge else {
+            return completion(.failure(.couldNotUnwrap))}
+        // point to challenge not user
+        let fetchAllPredicate = NSPredicate(format: "%K == %@", argumentArray: [DayStrings.recordTypeKey, challenge.recordID])
         let query = CKQuery(recordType: DayStrings.recordTypeKey, predicate: fetchAllPredicate)
         
         privateDB.perform(query, inZoneWith: nil) { (records, error) in
