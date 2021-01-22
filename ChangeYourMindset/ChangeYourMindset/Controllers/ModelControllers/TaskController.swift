@@ -13,7 +13,7 @@ class TaskController {
     //MARK: - Properties
     static let shared = TaskController()
     
-    let privateDB = CKContainer.default().privateCloudDatabase
+    let publicDB = CKContainer.default().publicCloudDatabase
     
     var currentTask: Task?
     
@@ -43,7 +43,7 @@ class TaskController {
     func save(task: Task, completion: @escaping (Result<Task, MindsetError>) -> Void) {
         
         let taskRecord = CKRecord(task: task)
-        privateDB.save(taskRecord) { (record, error) in
+        publicDB.save(taskRecord) { (record, error) in
             if let error = error {
                 return completion(.failure(.ckError(error)))
             }

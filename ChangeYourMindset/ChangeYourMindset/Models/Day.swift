@@ -10,11 +10,11 @@ import CloudKit
 
 struct DayStrings {
     static let recordTypeKey = "Day"
+    static let challengeReferenceKey = "challengeReference"
     fileprivate static let dailyJournalKey = "dailyJournal"
     fileprivate static let tasksCompletedKey = "tasksCompleted"
     fileprivate static let timestampKey = "timestamp"
     fileprivate static let userReferenceKey = "userReference"
-    fileprivate static let challengeReferenceKey = "challengeReference"
     fileprivate static let photoAssetKey = "photoAsset"
     fileprivate static let dayNumberKey = "dayNumber"
 }

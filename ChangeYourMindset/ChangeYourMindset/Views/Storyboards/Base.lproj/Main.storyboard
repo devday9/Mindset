@@ -48,7 +48,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LU4-NG-tHk">
-                                        <rect key="frame" x="50" y="104" width="117" height="117"/>
+                                        <rect key="frame" x="50" y="114" width="145" height="145"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="LU4-NG-tHk" secondAttribute="height" multiplier="1:1" id="yrS-v7-tWZ"/>
                                         </constraints>
@@ -57,7 +57,7 @@
                                         </connections>
                                     </containerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uju-TY-wmp">
-                                        <rect key="frame" x="49" y="336" width="351" height="48.666666666666686"/>
+                                        <rect key="frame" x="49" y="340" width="351" height="48.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Change Your Mindset!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBK-aB-JV6">
                                                 <rect key="frame" x="0.0" y="0.0" width="351" height="20.333333333333332"/>
@@ -74,7 +74,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="m0z-J1-P1p">
-                                        <rect key="frame" x="49" y="434.66666666666669" width="351" height="118.00000000000006"/>
+                                        <rect key="frame" x="49" y="438.66666666666669" width="351" height="118.00000000000006"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eJu-kC-6x5">
                                                 <rect key="frame" x="0.0" y="0.0" width="76.333333333333329" height="118"/>
@@ -94,6 +94,9 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="JUW-Ec-Ida" firstAttribute="top" secondItem="zzY-UR-QG3" secondAttribute="bottom" constant="20" id="Pkw-yf-I3B"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-iD-wz6">
                                                 <rect key="frame" x="78.333333333333343" y="0.0" width="272.66666666666663" height="118"/>
@@ -114,6 +117,10 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="YmW-SW-iF1" firstAttribute="top" secondItem="L2N-LP-IYN" secondAttribute="bottom" constant="7.9999999999999432" id="DFS-2J-PAE"/>
+                                                    <constraint firstItem="L2N-LP-IYN" firstAttribute="top" secondItem="Sgh-it-2bT" secondAttribute="bottom" constant="8" symbolic="YES" id="T3E-wg-MHh"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -123,7 +130,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNB-dI-kKP">
-                                        <rect key="frame" x="146.66666666666666" y="627.66666666666663" width="155.99999999999997" height="30"/>
+                                        <rect key="frame" x="136.66666666666669" y="631.66666666666663" width="175.66666666666669" height="38"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Sign Me Up"/>
                                         <connections>
@@ -133,13 +140,14 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="pNB-dI-kKP" firstAttribute="centerX" secondItem="m0z-J1-P1p" secondAttribute="centerX" id="68v-ep-lkM"/>
-                                    <constraint firstAttribute="bottom" secondItem="pNB-dI-kKP" secondAttribute="bottom" constant="186.33333333333337" id="Efo-Fa-nka"/>
+                                    <constraint firstAttribute="bottom" secondItem="pNB-dI-kKP" secondAttribute="bottom" constant="186.33333333333337" id="Ejs-Ya-XIP"/>
                                     <constraint firstItem="m0z-J1-P1p" firstAttribute="top" secondItem="uju-TY-wmp" secondAttribute="bottom" constant="50" id="ErV-Nx-Eoq"/>
-                                    <constraint firstItem="uju-TY-wmp" firstAttribute="top" secondItem="LU4-NG-tHk" secondAttribute="bottom" constant="115" id="XHF-qn-K23"/>
+                                    <constraint firstItem="uju-TY-wmp" firstAttribute="top" secondItem="LU4-NG-tHk" secondAttribute="bottom" constant="81" id="XHF-qn-K23"/>
                                     <constraint firstItem="m0z-J1-P1p" firstAttribute="trailing" secondItem="uju-TY-wmp" secondAttribute="trailing" id="nPI-eG-u0e"/>
                                     <constraint firstAttribute="trailing" secondItem="pNB-dI-kKP" secondAttribute="trailing" constant="87.333333333333371" id="rEx-tU-bOJ"/>
-                                    <constraint firstItem="pNB-dI-kKP" firstAttribute="width" secondItem="wVx-Kw-3jk" secondAttribute="width" multiplier="0.4" id="tO6-fk-NWz"/>
+                                    <constraint firstItem="pNB-dI-kKP" firstAttribute="width" secondItem="wVx-Kw-3jk" secondAttribute="width" multiplier="0.45" id="tO6-fk-NWz"/>
                                     <constraint firstItem="m0z-J1-P1p" firstAttribute="leading" secondItem="uju-TY-wmp" secondAttribute="leading" id="y3C-Ml-DWv"/>
+                                    <constraint firstItem="pNB-dI-kKP" firstAttribute="height" secondItem="wVx-Kw-3jk" secondAttribute="height" multiplier="0.045" id="yXc-ON-s0j"/>
                                     <constraint firstItem="pNB-dI-kKP" firstAttribute="top" secondItem="m0z-J1-P1p" secondAttribute="bottom" constant="75" id="zvY-6g-KqH"/>
                                 </constraints>
                             </scrollView>
@@ -148,8 +156,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wVx-Kw-3jk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5XX-6j-lLP"/>
-                            <constraint firstItem="LU4-NG-tHk" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.3" id="PeJ-U2-Wa8"/>
-                            <constraint firstItem="LU4-NG-tHk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="au5-H9-4sC"/>
+                            <constraint firstItem="LU4-NG-tHk" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.3" constant="28" id="PeJ-U2-Wa8"/>
+                            <constraint firstItem="LU4-NG-tHk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="au5-H9-4sC"/>
                             <constraint firstItem="wVx-Kw-3jk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g1C-lk-tCM"/>
                             <constraint firstAttribute="bottom" secondItem="wVx-Kw-3jk" secondAttribute="bottom" id="g2j-3K-yVL"/>
                             <constraint firstItem="LU4-NG-tHk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="lE6-o3-EC4"/>
