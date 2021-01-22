@@ -137,7 +137,7 @@ extension DayViewController: PhotoSelectorDelegate {
 extension DayViewController: UITableViewDelegate, UITableViewDataSource {
     
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return self.view.frame.height / 24
+            return self.view.frame.height / 22
         }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -40,7 +40,7 @@ class DayController {
         guard let challenge = ChallengeController.shared.currentChallenge else {
             return completion(.failure(.couldNotUnwrap))}
         // point to challenge not user
-        let fetchAllPredicate = NSPredicate(format: "%K == %@", argumentArray: [DayStrings.recordTypeKey, challenge.recordID])
+        let fetchAllPredicate = NSPredicate(format: "%K == %@", argumentArray: [DayStrings.challengeReferenceKey, challenge.recordID])
         let query = CKQuery(recordType: DayStrings.recordTypeKey, predicate: fetchAllPredicate)
         
         privateDB.perform(query, inZoneWith: nil) { (records, error) in
