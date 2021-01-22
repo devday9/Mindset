@@ -10,9 +10,6 @@ import CloudKit
 
 class OverviewViewController: UIViewController {
     
-//    private let itemsPerRow: CGFloat = 8
-//    private let sectionInsets = UIEdgeInsets(top: 8.0, left: 15.0, bottom: 10.0, right: 15.0)
-    
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -130,30 +127,4 @@ extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDe
         return cell
     }
 }//END OF EXTENSION
-//
-//extension OverviewViewController: UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-//        let availableWidth = view.frame.width - paddingSpace
-//        let widthPerItem = availableWidth / itemsPerRow
-//
-//        return CGSize(width: widthPerItem, height: widthPerItem - 8)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return sectionInsets
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return sectionInsets.left
-//    }
-//}//END OF EXTENSION
 
