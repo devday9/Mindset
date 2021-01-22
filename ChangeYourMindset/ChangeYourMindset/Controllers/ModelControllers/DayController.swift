@@ -11,7 +11,7 @@ import CloudKit
 class DayController {
     
     //MARK: - Properties
-    let privateDB = CKContainer.default().privateCloudDatabase
+    let publicDB = CKContainer.default().publicCloudDatabase
     static let shared = DayController()
     
     //MARK: - Helper Functions
@@ -31,7 +31,7 @@ class DayController {
                 completion(.failure(.ckError(error)))
             }
         }
-        privateDB.add(operation)
+        publicDB.add(operation)
     }
     
     //MARK: - Fetch
@@ -43,7 +43,7 @@ class DayController {
         let fetchAllPredicate = NSPredicate(format: "%K == %@", argumentArray: [DayStrings.challengeReferenceKey, challenge.recordID])
         let query = CKQuery(recordType: DayStrings.recordTypeKey, predicate: fetchAllPredicate)
         
-        privateDB.perform(query, inZoneWith: nil) { (records, error) in
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 completion(.failure(.ckError(error)))
             }
@@ -72,6 +72,6 @@ class DayController {
                   let updatedDay = Day(ckrecord: record) else { return completion(.failure(.couldNotUnwrap))}
             completion(.success(updatedDay))
         }
-        privateDB.add(operation)
+        publicDB.add(operation)
     }
 }//END OF CLASS

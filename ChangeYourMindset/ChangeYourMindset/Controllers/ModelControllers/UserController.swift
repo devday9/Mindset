@@ -14,7 +14,7 @@ class UserController {
     
     var currentUser: User?
     
-    let privateDB = CKContainer.default().privateCloudDatabase
+    let publicDB = CKContainer.default().publicCloudDatabase
     
     func createUser(username: String, profilePhoto: UIImage?,
                     completion: @escaping (Result<Bool, MindsetError>) -> Void) {
@@ -25,7 +25,7 @@ class UserController {
                 let user = User(username: username, appleUserReference: reference, profilePhoto: profilePhoto)
                 let userRecord = CKRecord(user: user)
                 
-                self.privateDB.save(userRecord) { (record, error) in
+                self.publicDB.save(userRecord) { (record, error) in
                     if let error = error {
                         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                         return completion(.failure(.ckError(error)))
@@ -66,7 +66,7 @@ class UserController {
                 
                 let query = CKQuery(recordType: UserStrings.recordTypeKey, predicate: predicate)
                 
-                self.privateDB.perform(query, inZoneWith: nil) { (records, error) in
+                self.publicDB.perform(query, inZoneWith: nil) { (records, error) in
                     if let error = error {
                         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                         completion(.failure(.ckError(error)))

@@ -11,7 +11,7 @@ import CloudKit
 class ChallengeController {
     
     //MARK: - Properties
-    let privateDB = CKContainer.default().privateCloudDatabase
+    let publicDB = CKContainer.default().publicCloudDatabase
     
     static let shared = ChallengeController()
     
@@ -26,7 +26,7 @@ class ChallengeController {
         
         let newChallenge = Challenge(userReference: reference)
         let challengeRecord = CKRecord(challenge: newChallenge)
-        privateDB.save(challengeRecord) { (record, error) in
+        publicDB.save(challengeRecord) { (record, error) in
             if let error = error {
                 return completion(.failure(.ckError(error)))
             }
@@ -61,7 +61,7 @@ class ChallengeController {
         let fetchAllPredicate = NSPredicate(format: "%K == %@", argumentArray: [ChallengeStrings.userReferenceKey, user.recordID])
         let query = CKQuery(recordType: ChallengeStrings.recordTypeKey, predicate: fetchAllPredicate)
         
-        privateDB.perform(query, inZoneWith: nil) { (records, error) in
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 completion(.failure(.ckError(error)))
             }
