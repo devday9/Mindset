@@ -154,7 +154,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaG-Qi-SWb">
-                                <rect key="frame" x="20" y="108" width="350" height="32"/>
+                                <rect key="frame" x="20" y="108" width="350" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -166,7 +166,7 @@
                             <constraint firstItem="uaG-Qi-SWb" firstAttribute="centerX" secondItem="uxz-Ki-Qbu" secondAttribute="centerX" id="3Rd-zN-sRg"/>
                             <constraint firstItem="uaG-Qi-SWb" firstAttribute="leading" secondItem="uxz-Ki-Qbu" secondAttribute="leading" constant="20" id="3ez-Oj-rzi"/>
                             <constraint firstItem="uaG-Qi-SWb" firstAttribute="top" secondItem="uxz-Ki-Qbu" secondAttribute="top" constant="20" id="DQN-hY-Srt"/>
-                            <constraint firstItem="RJr-wy-UdC" firstAttribute="top" secondItem="uaG-Qi-SWb" secondAttribute="bottom" constant="24.000000000000028" id="Rfd-DU-6cW"/>
+                            <constraint firstItem="RJr-wy-UdC" firstAttribute="top" secondItem="uaG-Qi-SWb" secondAttribute="bottom" constant="10" id="Rfd-DU-6cW"/>
                             <constraint firstItem="RJr-wy-UdC" firstAttribute="width" secondItem="rDN-lO-BCX" secondAttribute="width" multiplier="0.859813" constant="20.000035999999966" id="Xws-cA-yCx"/>
                             <constraint firstItem="RJr-wy-UdC" firstAttribute="centerX" secondItem="TIV-IX-0sJ" secondAttribute="centerX" id="ZQ2-E3-Ltl"/>
                             <constraint firstAttribute="bottom" secondItem="TIV-IX-0sJ" secondAttribute="bottom" id="cds-Jo-LZA"/>
@@ -237,7 +237,7 @@
                                                 <rect key="frame" x="32" y="256.66666666666669" width="326" height="295.00000000000006"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="v6j-Rg-eLm" secondAttribute="height" multiplier="326:295" id="dMD-R8-SFS"/>
+                                                    <constraint firstAttribute="height" constant="295" id="B3V-PB-cuY"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" id="UWf-rr-6it" customClass="TaskTableViewCell" customModule="ChangeYourMindset" customModuleProvider="target">
