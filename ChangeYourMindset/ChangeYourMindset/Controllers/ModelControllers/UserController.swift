@@ -76,6 +76,7 @@ class UserController {
                     guard let record = records?.first else {
                         return completion(.success(nil))
                     }
+                    
                     guard let fetchedUser = User(ckRecord: record) else {
                         completion(.failure(.couldNotUnwrap))
                         return
