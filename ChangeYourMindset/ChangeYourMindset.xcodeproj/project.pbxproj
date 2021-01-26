@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -127,6 +127,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B21154889B729EFA8C15D38D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C33D8BFD2543640200CEE37D = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +142,7 @@
 				C3D64CB325530EA600AED4AE /* DayTableViewWidget */,
 				C33D8C072543640300CEE37D /* Products */,
 				C33D8C222543643D00CEE37D /* Frameworks */,
+				B21154889B729EFA8C15D38D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};

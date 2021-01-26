@@ -42,6 +42,8 @@ class OverviewViewController: UIViewController {
         collectionView.backgroundColor = .systemRed
         collectionView.isScrollEnabled = false
         collectionView.collectionViewLayout = configureCollectionViewLayout()
+        collectionView.addAccentBorder()
+        collectionView.layer.cornerRadius = 20
     }
     
     func configureCollectionViewLayout() -> UICollectionViewLayout {
@@ -66,25 +68,25 @@ class OverviewViewController: UIViewController {
     }
     
     // THIS BELONGS ON A MODEL CONTROLLER FOR OVERVIEWVC?
-//        func clearAllData(_ days: Day, completion: @escaping (Result<Bool, MindsetError>) -> Void) {
-//
-//            let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [days.recordID])
-//
-//            operation.savePolicy = .changedKeys
-//            operation.qualityOfService = .userInteractive
-//            operation.modifyRecordsCompletionBlock = { ( _, recordIDs, error) in
-//
-//                if let error = error {
-//                    return completion(.failure(.ckError(error)))
-//                }
-//
-//                guard let recordIDs = recordIDs else { return completion(.failure(.couldNotUnwrap))}
-//                print("\(recordIDs) were removed successfully")
-//                completion(.success(true))
-//            }
-//
-//            privateDB.add(operation)
-//        }
+    //        func clearAllData(_ days: Day, completion: @escaping (Result<Bool, MindsetError>) -> Void) {
+    //
+    //            let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [days.recordID])
+    //
+    //            operation.savePolicy = .changedKeys
+    //            operation.qualityOfService = .userInteractive
+    //            operation.modifyRecordsCompletionBlock = { ( _, recordIDs, error) in
+    //
+    //                if let error = error {
+    //                    return completion(.failure(.ckError(error)))
+    //                }
+    //
+    //                guard let recordIDs = recordIDs else { return completion(.failure(.couldNotUnwrap))}
+    //                print("\(recordIDs) were removed successfully")
+    //                completion(.success(true))
+    //            }
+    //
+    //            privateDB.add(operation)
+    //        }
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -92,7 +94,10 @@ class OverviewViewController: UIViewController {
             guard let indexArray = collectionView.indexPathsForSelectedItems,
                   let destination = segue.destination as? DayViewController,
                   let days = ChallengeController.shared.currentChallenge?.days
-            else { return }
+            else {
+                return
+            }
+            
             let indexPath = indexArray[0]
             destination.day = days[indexPath.row]
         }
@@ -113,16 +118,18 @@ extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as? DayCollectionViewCell,
               let currentChallenge = ChallengeController.shared.currentChallenge
-              else { return UICollectionViewCell() }
+        else {
+            return UICollectionViewCell()
+        }
         let days = currentChallenge.days
         let day = days[indexPath.row]
-//        let dayNotInFuture = day.dayNumber <= currentChallenge.daysSinceStartDate
+        //        let dayNotInFuture = day.dayNumber <= currentChallenge.daysSinceStartDate
         
-//        print("\(day) \(dayNotInFuture) \(currentChallenge.daysSinceStartDate) \(currentChallenge.startDate)")
+        //        print("\(day) \(dayNotInFuture) \(currentChallenge.daysSinceStartDate) \(currentChallenge.startDate)")
         
         cell.dayLabel.text = String(day.dayNumber)
-//        cell.isUserInteractionEnabled = dayNotInFuture
-//        cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
+        //        cell.isUserInteractionEnabled = dayNotInFuture
+        //        cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
         
         return cell
     }
