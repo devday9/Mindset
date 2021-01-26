@@ -32,6 +32,9 @@ class OverviewViewController: UIViewController {
     }
     
     //MARK: - Actions
+    @IBAction func rulesButtonTapped(_ sender: Any) {
+        
+    }
     @IBAction func clearAllDataButtonTapped(_ sender: Any) {
         //        clearAllData(Day, completion: <#T##(Result<Bool, MindsetError>) -> Void#>)
     }
