@@ -79,9 +79,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0iA-K4-UGR">
-                        <barButtonItem key="rightBarButtonItem" title="Clear All Data" id="yPa-Yy-3cB">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="yPa-Yy-3cB">
                             <connections>
                                 <action selector="clearAllDataButtonTapped:" destination="TLU-aa-wB5" id="qhB-2N-wsx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Rules" image="info.circle" catalog="system" id="tEg-yN-MCa">
+                            <connections>
+                                <action selector="rulesButtonTapped:" destination="TLU-aa-wB5" id="dqG-mc-AjT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -188,7 +193,7 @@
                                                 <rect key="frame" x="32" y="256.66666666666669" width="326" height="295.00000000000006"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="295" id="B3V-PB-cuY"/>
+                                                    <constraint firstAttribute="width" secondItem="v6j-Rg-eLm" secondAttribute="height" multiplier="326:295" id="kr3-2B-gsh"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" id="UWf-rr-6it" customClass="TaskTableViewCell" customModule="ChangeYourMindset" customModuleProvider="target">
@@ -320,6 +325,7 @@
     </scenes>
     <resources>
         <image name="incomplete" width="512" height="512"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

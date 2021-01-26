@@ -7,8 +7,20 @@
 
 import UIKit
 import CloudKit
+import BLTNBoard
 
 class OverviewViewController: UIViewController {
+    
+    private lazy var boardManager: BLTNItemManager = {
+        
+        let item = BLTNPageItem(title: "Challenge Rules")
+        item.descriptionText =  "Read 10 pages a day \n\n Drink 1 gallon of water \n\n 45 minute workout \n\n 15 minutes of prayer or medidation \n\n Follow a diet & no cheat meals \n\n No alchol or drugs \n\n Take a daily progress pic"
+        
+        item.appearance.titleTextColor = .darkGray
+        item.appearance.descriptionTextColor = .black
+        
+        return BLTNItemManager(rootItem: item)
+    }()
     
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -32,6 +44,9 @@ class OverviewViewController: UIViewController {
     }
     
     //MARK: - Actions
+    @IBAction func rulesButtonTapped(_ sender: Any) {
+        presentBulletinBoard()
+    }
     @IBAction func clearAllDataButtonTapped(_ sender: Any) {
         //        clearAllData(Day, completion: <#T##(Result<Bool, MindsetError>) -> Void#>)
     }
@@ -42,8 +57,8 @@ class OverviewViewController: UIViewController {
         collectionView.backgroundColor = .systemRed
         collectionView.isScrollEnabled = false
         collectionView.collectionViewLayout = configureCollectionViewLayout()
-        collectionView.addAccentBorder()
-        collectionView.layer.cornerRadius = 20
+        //        collectionView.addAccentBorder()
+        //        collectionView.layer.cornerRadius = 20
     }
     
     func configureCollectionViewLayout() -> UICollectionViewLayout {
@@ -65,6 +80,10 @@ class OverviewViewController: UIViewController {
                                       trailing: 1)
         
         return UICollectionViewCompositionalLayout(section: section)
+    }
+    
+    func presentBulletinBoard() {
+        boardManager.showBulletin(above: self)
     }
     
     // THIS BELONGS ON A MODEL CONTROLLER FOR OVERVIEWVC?
