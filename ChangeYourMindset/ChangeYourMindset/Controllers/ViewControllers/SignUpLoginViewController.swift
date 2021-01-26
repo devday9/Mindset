@@ -111,6 +111,7 @@ class SignUpLoginViewController: UIViewController {
                 self.presentOverviewVC()
             case .failure(let error):
                 print(error.errorDescription)
+                // let the user know why something went wrong. Put an alert or 
             }
         }
     }

@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B9A800147DDE5C81A3CB70E /* Pods_ChangeYourMindset.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63309200DA9A9D6211D9CD62 /* Pods_ChangeYourMindset.framework */; };
+		95D6C3EF997A4F91BB6568F3 /* Pods_DayTableViewWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9683F8E80A22770E453F83B4 /* Pods_DayTableViewWidgetExtension.framework */; };
 		C336910C254B32900073035C /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C336910B254B32900073035C /* OverviewViewController.swift */; };
 		C336910F254B64320073035C /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C336910E254B64320073035C /* DayCollectionViewCell.swift */; };
 		C3369113254B773B0073035C /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */; };
@@ -68,6 +70,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B6B4FF9DD8683D5041CDAE8 /* Pods-DayTableViewWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayTableViewWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-DayTableViewWidgetExtension/Pods-DayTableViewWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		2CA113A1EBC4B4569BD36386 /* Pods-DayTableViewWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayTableViewWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-DayTableViewWidgetExtension/Pods-DayTableViewWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		63309200DA9A9D6211D9CD62 /* Pods_ChangeYourMindset.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChangeYourMindset.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		760CFA7752BEBAAFFB5ACD8C /* Pods-ChangeYourMindset.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangeYourMindset.debug.xcconfig"; path = "Target Support Files/Pods-ChangeYourMindset/Pods-ChangeYourMindset.debug.xcconfig"; sourceTree = "<group>"; };
+		9683F8E80A22770E453F83B4 /* Pods_DayTableViewWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayTableViewWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5606FD69535D9B0F9F7FABB /* Pods-ChangeYourMindset.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangeYourMindset.release.xcconfig"; path = "Target Support Files/Pods-ChangeYourMindset/Pods-ChangeYourMindset.release.xcconfig"; sourceTree = "<group>"; };
 		C336910B254B32900073035C /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		C336910E254B64320073035C /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C33D8C242543643D00CEE37D /* CloudKit.framework in Frameworks */,
+				8B9A800147DDE5C81A3CB70E /* Pods_ChangeYourMindset.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,12 +130,24 @@
 			files = (
 				C3D64CB225530EA600AED4AE /* SwiftUI.framework in Frameworks */,
 				C3D64CB125530EA600AED4AE /* WidgetKit.framework in Frameworks */,
+				95D6C3EF997A4F91BB6568F3 /* Pods_DayTableViewWidgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B21154889B729EFA8C15D38D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				760CFA7752BEBAAFFB5ACD8C /* Pods-ChangeYourMindset.debug.xcconfig */,
+				B5606FD69535D9B0F9F7FABB /* Pods-ChangeYourMindset.release.xcconfig */,
+				2CA113A1EBC4B4569BD36386 /* Pods-DayTableViewWidgetExtension.debug.xcconfig */,
+				2B6B4FF9DD8683D5041CDAE8 /* Pods-DayTableViewWidgetExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C33D8BFD2543640200CEE37D = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +156,7 @@
 				C3D64CB325530EA600AED4AE /* DayTableViewWidget */,
 				C33D8C072543640300CEE37D /* Products */,
 				C33D8C222543643D00CEE37D /* Frameworks */,
+				B21154889B729EFA8C15D38D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +200,8 @@
 				C33D8C232543643D00CEE37D /* CloudKit.framework */,
 				C3D64C6B2552242500AED4AE /* WidgetKit.framework */,
 				C3D64C6D2552242500AED4AE /* SwiftUI.framework */,
+				63309200DA9A9D6211D9CD62 /* Pods_ChangeYourMindset.framework */,
+				9683F8E80A22770E453F83B4 /* Pods_DayTableViewWidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -280,10 +304,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C33D8C1A2543640300CEE37D /* Build configuration list for PBXNativeTarget "ChangeYourMindset" */;
 			buildPhases = (
+				5942BB7A2F9AC88D3D60F152 /* [CP] Check Pods Manifest.lock */,
 				C33D8C022543640300CEE37D /* Sources */,
 				C33D8C032543640300CEE37D /* Frameworks */,
 				C33D8C042543640300CEE37D /* Resources */,
 				C3D64C7B2552242700AED4AE /* Embed App Extensions */,
+				82CA3C6D39FD9A5A7441370F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,6 +325,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3D64CBC25530EA700AED4AE /* Build configuration list for PBXNativeTarget "DayTableViewWidgetExtension" */;
 			buildPhases = (
+				1B26A05949634C304D4B232E /* [CP] Check Pods Manifest.lock */,
 				C3D64CAC25530EA600AED4AE /* Sources */,
 				C3D64CAD25530EA600AED4AE /* Frameworks */,
 				C3D64CAE25530EA600AED4AE /* Resources */,
@@ -371,6 +398,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B26A05949634C304D4B232E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DayTableViewWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5942BB7A2F9AC88D3D60F152 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChangeYourMindset-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82CA3C6D39FD9A5A7441370F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChangeYourMindset/Pods-ChangeYourMindset-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChangeYourMindset/Pods-ChangeYourMindset-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChangeYourMindset/Pods-ChangeYourMindset-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C33D8C022543640300CEE37D /* Sources */ = {
@@ -566,6 +657,7 @@
 		};
 		C33D8C1B2543640300CEE37D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 760CFA7752BEBAAFFB5ACD8C /* Pods-ChangeYourMindset.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -587,6 +679,7 @@
 		};
 		C33D8C1C2543640300CEE37D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5606FD69535D9B0F9F7FABB /* Pods-ChangeYourMindset.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -608,6 +701,7 @@
 		};
 		C3D64CBD25530EA700AED4AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA113A1EBC4B4569BD36386 /* Pods-DayTableViewWidgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -630,6 +724,7 @@
 		};
 		C3D64CBE25530EA700AED4AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B6B4FF9DD8683D5041CDAE8 /* Pods-DayTableViewWidgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;

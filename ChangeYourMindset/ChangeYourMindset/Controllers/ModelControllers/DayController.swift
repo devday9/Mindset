@@ -23,13 +23,13 @@ class DayController {
         
         let days: [Day] = (1...numberOfDays).compactMap {Day(dayNumber: $0, challengeReference: reference)}
         let dayRecords = days.compactMap {CKRecord(day: $0)}
-        completion(.success(days))
         //ASK AARON ABOUT THIS
         let operation = CKModifyRecordsOperation(recordsToSave: dayRecords, recordIDsToDelete: nil)
         operation.modifyRecordsCompletionBlock = { records, recordIDs, error in
             if let error = error {
                 completion(.failure(.ckError(error)))
             }
+            completion(.success(days))
         }
         publicDB.add(operation)
     }
