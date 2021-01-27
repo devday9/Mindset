@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Allows access to the camera so the user can take a profile picture/ take a daily progress picture.</string>
+	<string>Allows $(PRODUCT_NAME) access to the camera so the user can take a profile picture &amp; take a daily progress picture.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allows access to the Photo Library so the user can upload a Profile picture/ daily progress picture.</string>
+	<string>Allows $(PRODUCT_NAME) access to the Photo Library so the user can upload a Profile picture &amp; daily progress picture.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -57,8 +57,8 @@ class OverviewViewController: UIViewController {
         collectionView.backgroundColor = .systemRed
         collectionView.isScrollEnabled = false
         collectionView.collectionViewLayout = configureCollectionViewLayout()
-        //        collectionView.addAccentBorder()
-        //        collectionView.layer.cornerRadius = 20
+                collectionView.addAccentBorder()
+                collectionView.layer.cornerRadius = 20
     }
     
     func configureCollectionViewLayout() -> UICollectionViewLayout {
