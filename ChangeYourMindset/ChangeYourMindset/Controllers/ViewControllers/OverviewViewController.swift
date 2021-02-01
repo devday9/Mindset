@@ -147,8 +147,8 @@ extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDe
         //        print("\(day) \(dayNotInFuture) \(currentChallenge.daysSinceStartDate) \(currentChallenge.startDate)")
         
         cell.dayLabel.text = String(day.dayNumber)
-        //        cell.isUserInteractionEnabled = dayNotInFuture
-        //        cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
+//                cell.isUserInteractionEnabled = dayNotInFuture
+//                cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
         
         return cell
     }

@@ -46,7 +46,6 @@ class TaskTableViewCell: UITableViewCell {
     
     //MARK: - Actions
     @IBAction func completeButtonTapped(_ sender: Any) {
-        //        delegate?.completeButtonTapped(sender: self)
         taskComplete()
     }
     

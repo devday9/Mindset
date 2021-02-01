@@ -20,10 +20,8 @@ class DayController {
         guard let challenge = ChallengeController.shared.currentChallenge else { return }
         
         let reference = CKRecord.Reference(recordID: challenge.recordID, action: .deleteSelf)
-        
         let days: [Day] = (1...numberOfDays).compactMap {Day(dayNumber: $0, challengeReference: reference)}
         let dayRecords = days.compactMap {CKRecord(day: $0)}
-        //ASK AARON ABOUT THIS
         let operation = CKModifyRecordsOperation(recordsToSave: dayRecords, recordIDsToDelete: nil)
         operation.modifyRecordsCompletionBlock = { records, recordIDs, error in
             if let error = error {
