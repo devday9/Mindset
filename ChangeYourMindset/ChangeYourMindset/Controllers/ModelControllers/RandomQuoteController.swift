@@ -16,7 +16,7 @@ class RandomQuoteController {
     
     static let shared = RandomQuoteController()
     
-    static func fetchQuote(completion: @escaping (Result<[SecondLevelDictionary], NetworkError>) -> Void) {
+    func fetchQuote(completion: @escaping (Result<Quote, NetworkError>) -> Void) {
         guard let baseURL = URL(string: StringConstants.baseURL) else {
             return completion(.failure(.invalidURL))
         }
@@ -33,9 +33,8 @@ class RandomQuoteController {
             }
             
             do {
-                let topLevelObject = try JSONDecoder().decode(TopLevelObject.self, from: data)
-                let secondLevelDictionary = topLevelObject.randomQuote
-                return completion(.success(secondLevelDictionary))
+                guard  let quote = try JSONDecoder().decode([Quote].self, from: data).first else { return }
+                return completion(.success(quote))
             } catch {
                 return completion(.failure(.thrownError(error)))
             }

@@ -12,7 +12,7 @@ import BLTNBoard
 class OverviewViewController: UIViewController {
     
     //MARK: - Properties
-    var quotes: [SecondLevelDictionary] = []
+    var quotes: [Quote] = []
     
     private lazy var boardManager: BLTNItemManager = {
         
@@ -32,13 +32,8 @@ class OverviewViewController: UIViewController {
     
     //MARK: - Properties
     var viewsLaidOut = false
-    
-    var randomQuote: SecondLevelDictionary? {
-        didSet {
-            
-        }
-    }
-    
+    var randomQuote: Quote?
+        
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,16 +70,17 @@ class OverviewViewController: UIViewController {
     
     func updateViews() {
         guard let randomQuote = randomQuote else { return }
-        quoteTextLabel.text = randomQuote.quote
+        quoteTextLabel.text = randomQuote.text
         authorLabel.text = randomQuote.author
     }
     
     func fetchQuote() {
-        RandomQuoteController.fetchQuote { (result) in
+        RandomQuoteController.shared.fetchQuote { (result) in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let quotes):
-                    self.quotes = quotes
+                case .success(let quote):
+                    self.randomQuote = quote
+                    self.updateViews()
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -173,13 +169,13 @@ extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         let days = currentChallenge.days
         let day = days[indexPath.row]
-        //        let dayNotInFuture = day.dayNumber <= currentChallenge.daysSinceStartDate
+                let dayNotInFuture = day.dayNumber <= currentChallenge.daysSinceStartDate
         
-        //        print("\(day) \(dayNotInFuture) \(currentChallenge.daysSinceStartDate) \(currentChallenge.startDate)")
+                print("\(day) \(dayNotInFuture) \(currentChallenge.daysSinceStartDate) \(currentChallenge.startDate)")
         
         cell.dayLabel.text = String(day.dayNumber)
-        //                cell.isUserInteractionEnabled = dayNotInFuture
-        //                cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
+                        cell.isUserInteractionEnabled = dayNotInFuture
+                        cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
         
         return cell
     }

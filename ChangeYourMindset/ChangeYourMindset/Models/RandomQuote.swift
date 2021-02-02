@@ -8,15 +8,15 @@
 import Foundation
 
 struct TopLevelObject: Codable {
-    let randomQuote: [SecondLevelDictionary]
+    let randomQuote: [Quote]
 }
 
-struct SecondLevelDictionary: Codable {
-    let quote: String
+struct Quote: Codable {
+    let text: String
     let author: String
     
     enum CodingKeys: String, CodingKey {
-        case quote = "q"
+        case text = "q"
         case author = "a"
     }
 }//END OF STRUCT

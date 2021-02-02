@@ -37,6 +37,11 @@ class Challenge {
         self.userReference = userReference
     }
     
+//    var currentDay: Day {
+////        let day = // search SO to find how many days from day to day in swift
+////        return days.first(where: { $0.number == day})
+//    }
+    
     var daysSinceStartDate: Int {
         Int(Date().timeIntervalSince(startDate) / (24 * 60 * 60))
         //        (Date().timeIntervalSince(startDate) / (24 * 60 * 60))
