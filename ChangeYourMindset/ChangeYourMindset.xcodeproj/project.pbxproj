@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1D0DA83A7F8AE50EF62C5620 /* Pods_DayTableViewWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B0B3F59CBDE4E5DFBF1EB /* Pods_DayTableViewWidgetExtension.framework */; };
 		938B989A62DAFB2BBEBF8C8E /* Pods_ChangeYourMindset.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB4FB1215CD06B6DB0BFC28 /* Pods_ChangeYourMindset.framework */; };
+		C319764825C9D6E000AEDDAB /* RandomQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319764725C9D6E000AEDDAB /* RandomQuote.swift */; };
+		C319764D25C9DC4900AEDDAB /* RandomQuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319764C25C9DC4900AEDDAB /* RandomQuoteController.swift */; };
+		C319765425C9DF5200AEDDAB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319765325C9DF5200AEDDAB /* NetworkError.swift */; };
 		C336910C254B32900073035C /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C336910B254B32900073035C /* OverviewViewController.swift */; };
 		C336910F254B64320073035C /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C336910E254B64320073035C /* DayCollectionViewCell.swift */; };
 		C3369113254B773B0073035C /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */; };
@@ -73,6 +76,9 @@
 		35A083858C0008E650D7823E /* Pods-DayTableViewWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayTableViewWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-DayTableViewWidgetExtension/Pods-DayTableViewWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		62A1E9703EC392FCA0789775 /* Pods-ChangeYourMindset.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangeYourMindset.release.xcconfig"; path = "Target Support Files/Pods-ChangeYourMindset/Pods-ChangeYourMindset.release.xcconfig"; sourceTree = "<group>"; };
 		7FB4FB1215CD06B6DB0BFC28 /* Pods_ChangeYourMindset.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChangeYourMindset.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C319764725C9D6E000AEDDAB /* RandomQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuote.swift; sourceTree = "<group>"; };
+		C319764C25C9DC4900AEDDAB /* RandomQuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteController.swift; sourceTree = "<group>"; };
+		C319765325C9DF5200AEDDAB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C336910B254B32900073035C /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		C336910E254B64320073035C /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3369112254B773B0073035C /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F58D8625473C5D002BF456 /* MindsetError.swift */,
+				C319765325C9DF5200AEDDAB /* NetworkError.swift */,
 				C3F58DC425491A77002BF456 /* StyleGuide.swift */,
 				C352DC5625AE18E6008B9B30 /* Alerts.swift */,
 			);
@@ -272,6 +279,7 @@
 				C3D64C58254CB1A700AED4AE /* DayController.swift */,
 				C3D64C5B254CE1EB00AED4AE /* TaskController.swift */,
 				C3369117254BB8400073035C /* ChallengeController.swift */,
+				C319764C25C9DC4900AEDDAB /* RandomQuoteController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 				C3F58D9125474BB7002BF456 /* Day.swift */,
 				C3F58D9825477D64002BF456 /* Task.swift */,
 				C3F58D9C25478C25002BF456 /* Challenge.swift */,
+				C319764725C9D6E000AEDDAB /* RandomQuote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,7 +479,9 @@
 			files = (
 				C3F58DDE254A2B2C002BF456 /* TaskTableViewCell.swift in Sources */,
 				C33D8C362543663D00CEE37D /* User.swift in Sources */,
+				C319765425C9DF5200AEDDAB /* NetworkError.swift in Sources */,
 				C336910C254B32900073035C /* OverviewViewController.swift in Sources */,
+				C319764D25C9DC4900AEDDAB /* RandomQuoteController.swift in Sources */,
 				C3369113254B773B0073035C /* LaunchScreenCopyViewController.swift in Sources */,
 				C3F58D9D25478C25002BF456 /* Challenge.swift in Sources */,
 				C3F58DAA2548DCA9002BF456 /* SignUpLoginViewController.swift in Sources */,
@@ -486,6 +497,7 @@
 				C3F58D9925477D64002BF456 /* Task.swift in Sources */,
 				C33D8C0C2543640300CEE37D /* SceneDelegate.swift in Sources */,
 				C3F58D8725473C5D002BF456 /* MindsetError.swift in Sources */,
+				C319764825C9D6E000AEDDAB /* RandomQuote.swift in Sources */,
 				C3D64C5C254CE1EB00AED4AE /* TaskController.swift in Sources */,
 				C3F58D9225474BB7002BF456 /* Day.swift in Sources */,
 			);

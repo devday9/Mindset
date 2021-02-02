@@ -11,6 +11,9 @@ import BLTNBoard
 
 class OverviewViewController: UIViewController {
     
+    //MARK: - Properties
+    var quotes: [SecondLevelDictionary] = []
+    
     private lazy var boardManager: BLTNItemManager = {
         
         let item = BLTNPageItem(title: "Challenge Rules")
@@ -24,15 +27,24 @@ class OverviewViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var quoteTextLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     
     //MARK: - Properties
     var viewsLaidOut = false
+    
+    var randomQuote: SecondLevelDictionary? {
+        didSet {
+            
+        }
+    }
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        fetchQuote()
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,10 +69,29 @@ class OverviewViewController: UIViewController {
         collectionView.backgroundColor = .systemRed
         collectionView.isScrollEnabled = false
         collectionView.collectionViewLayout = configureCollectionViewLayout()
-                collectionView.addAccentBorder()
-                collectionView.layer.cornerRadius = 20
+        collectionView.addAccentBorder()
+        collectionView.layer.cornerRadius = 20
     }
     
+    func updateViews() {
+        guard let randomQuote = randomQuote else { return }
+        quoteTextLabel.text = randomQuote.quote
+        authorLabel.text = randomQuote.author
+    }
+    
+    func fetchQuote() {
+        RandomQuoteController.fetchQuote { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let quotes):
+                    self.quotes = quotes
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+
     func configureCollectionViewLayout() -> UICollectionViewLayout {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
@@ -147,8 +178,8 @@ extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDe
         //        print("\(day) \(dayNotInFuture) \(currentChallenge.daysSinceStartDate) \(currentChallenge.startDate)")
         
         cell.dayLabel.text = String(day.dayNumber)
-//                cell.isUserInteractionEnabled = dayNotInFuture
-//                cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
+        //                cell.isUserInteractionEnabled = dayNotInFuture
+        //                cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
         
         return cell
     }
