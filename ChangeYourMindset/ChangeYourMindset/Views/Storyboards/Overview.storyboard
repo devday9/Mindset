@@ -21,7 +21,7 @@
                                 <rect key="frame" x="17.333333333333343" y="176.33333333333334" width="355.33333333333326" height="410.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="RJr-wy-UdC" secondAttribute="height" multiplier="71:82" id="OiB-79-ZNU"/>
+                                    <constraint firstAttribute="height" constant="410.33333333333326" id="zNM-SX-6kA"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qL1-km-BUX">
                                     <size key="itemSize" width="40" height="40"/>
@@ -65,8 +65,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Hn-ef-NSg">
-                                <rect key="frame" x="17.666666666666657" y="611.66666666666663" width="354.66666666666674" height="41.666666666666629"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Hn-ef-NSg">
+                                <rect key="frame" x="17.666666666666657" y="661.66666666666663" width="354.66666666666674" height="48.666666666666629"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(quote text)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoH-ly-wW2">
                                         <rect key="frame" x="0.0" y="0.0" width="354.66666666666669" height="20.333333333333332"/>
@@ -75,7 +75,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(author)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNK-aL-ZOR">
-                                        <rect key="frame" x="0.0" y="21.333333333333371" width="354.66666666666669" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="28.333333333333371" width="354.66666666666669" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -95,7 +95,7 @@
                             <constraint firstItem="RJr-wy-UdC" firstAttribute="centerX" secondItem="uxz-Ki-Qbu" secondAttribute="centerX" id="mnw-03-f1A"/>
                             <constraint firstItem="9Hn-ef-NSg" firstAttribute="centerX" secondItem="uxz-Ki-Qbu" secondAttribute="centerX" id="pJX-1m-DoH"/>
                             <constraint firstItem="RJr-wy-UdC" firstAttribute="top" secondItem="uaG-Qi-SWb" secondAttribute="bottom" constant="25" id="pwO-l3-Nza"/>
-                            <constraint firstItem="9Hn-ef-NSg" firstAttribute="top" secondItem="RJr-wy-UdC" secondAttribute="bottom" constant="25" id="sJY-xe-R8t"/>
+                            <constraint firstItem="9Hn-ef-NSg" firstAttribute="top" secondItem="RJr-wy-UdC" secondAttribute="bottom" constant="75" id="sJY-xe-R8t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0iA-K4-UGR">

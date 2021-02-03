@@ -44,7 +44,6 @@ class Challenge {
     
     var daysSinceStartDate: Int {
         Int(Date().timeIntervalSince(startDate) / (24 * 60 * 60))
-        //        (Date().timeIntervalSince(startDate) / (24 * 60 * 60))
     }
 }//END OF CLASS
 

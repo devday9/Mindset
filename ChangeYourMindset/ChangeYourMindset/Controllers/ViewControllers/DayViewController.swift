@@ -72,7 +72,7 @@ class DayViewController: UIViewController {
     
     //MARK: - Views
     func setupBodyTextView() {
-        bodyTextView.addAccentBorder()
+        bodyTextView.addAccentBorderThick()
         bodyTextView.backgroundColor = .white
         bodyTextView.textColor = .black
         bodyTextView.layer.cornerRadius = 32
@@ -86,7 +86,7 @@ class DayViewController: UIViewController {
     }
     
     func setupContainerView() {
-        containerView.addAccentBorder()
+        containerView.addAccentBorderThick()
         containerView.contentMode = .scaleToFill
         containerView.layer.cornerRadius = 32
         containerView.clipsToBounds = true

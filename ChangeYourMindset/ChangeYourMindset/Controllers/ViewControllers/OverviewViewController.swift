@@ -64,14 +64,16 @@ class OverviewViewController: UIViewController {
         collectionView.backgroundColor = .systemRed
         collectionView.isScrollEnabled = false
         collectionView.collectionViewLayout = configureCollectionViewLayout()
-        collectionView.addAccentBorder()
+//        collectionView.addAccentBorderThin()
         collectionView.layer.cornerRadius = 20
     }
     
     func updateViews() {
         guard let randomQuote = randomQuote else { return }
-        quoteTextLabel.text = randomQuote.text
-        authorLabel.text = randomQuote.author
+        quoteTextLabel.text = """
+            "\(randomQuote.text)"
+            """
+        authorLabel.text = "- \(randomQuote.author)"
     }
     
     func fetchQuote() {
