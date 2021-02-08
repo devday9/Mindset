@@ -113,11 +113,6 @@ class DayViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    func updateViews() {
-        guard let day = day else { return }
-        
-    }
-    
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPhotoPickerVC" {

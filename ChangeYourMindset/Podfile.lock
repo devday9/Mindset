@@ -1,16 +1,20 @@
 PODS:
   - BulletinBoard (5.0.0)
+  - JGProgressHUD (2.2)
 
 DEPENDENCIES:
   - BulletinBoard
+  - JGProgressHUD
 
 SPEC REPOS:
   trunk:
     - BulletinBoard
+    - JGProgressHUD
 
 SPEC CHECKSUMS:
   BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
 
-PODFILE CHECKSUM: 4a97bbde2da72a16214413381c39362d52ccfc9b
+PODFILE CHECKSUM: 0c91a0bed55d019f819d9439527d7414227f94cf
 
 COCOAPODS: 1.10.0

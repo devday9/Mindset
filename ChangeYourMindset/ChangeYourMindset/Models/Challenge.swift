@@ -38,8 +38,8 @@ class Challenge {
     }
     
 //    var currentDay: Day {
-////        let day = // search SO to find how many days from day to day in swift
-////        return days.first(where: { $0.number == day})
+//   let day = // search SO to find how many days from day to day in swift
+//       return days.first(where: { $0.number == day})
 //    }
     
     var daysSinceStartDate: Int {
