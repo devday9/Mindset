@@ -36,7 +36,7 @@ class RandomQuoteController {
                 guard  let quote = try JSONDecoder().decode([Quote].self, from: data).first else { return }
                 return completion(.success(quote))
             } catch {
-                return completion(.failure(.thrownError(error)))
+                return completion(.failure(.unableToDecode))
             }
         }.resume()
     }

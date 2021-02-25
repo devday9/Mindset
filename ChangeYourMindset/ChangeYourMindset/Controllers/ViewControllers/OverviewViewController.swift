@@ -11,8 +11,15 @@ import BLTNBoard
 
 class OverviewViewController: UIViewController {
     
+    //MARK: - Outlets
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var quoteTextLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    
     //MARK: - Properties
     var quotes: [Quote] = []
+    var randomQuote: Quote?
+    var viewsLaidOut = false
     
     private lazy var boardManager: BLTNItemManager = {
         
@@ -25,20 +32,15 @@ class OverviewViewController: UIViewController {
         return BLTNItemManager(rootItem: item)
     }()
     
-    //MARK: - Outlets
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var quoteTextLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    
-    //MARK: - Properties
-    var viewsLaidOut = false
-    var randomQuote: Quote?
-        
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchQuote()
     }
     

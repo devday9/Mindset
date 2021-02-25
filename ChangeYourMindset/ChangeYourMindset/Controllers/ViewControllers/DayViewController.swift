@@ -70,7 +70,7 @@ class DayViewController: UIViewController {
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
-    //MARK: - Views
+    //MARK: - Setup Views
     func setupBodyTextView() {
         bodyTextView.addAccentBorderThick()
         bodyTextView.backgroundColor = .white
