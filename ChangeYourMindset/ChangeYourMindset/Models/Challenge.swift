@@ -49,7 +49,6 @@ class Challenge {
 
 //MARK: - Extensions
 extension Challenge {
-    
     convenience init?(ckRecord: CKRecord) {
         guard let title = ckRecord[ChallengeStrings.titleKey] as? String,
               let startDate = ckRecord[ChallengeStrings.startDateKey] as? Date,

@@ -74,7 +74,6 @@ class Day {
 
 //MARK: - Extensions
 extension Day {
-    
     convenience init?(ckrecord: CKRecord) {
         guard let dayNumber = ckrecord[DayStrings.dayNumberKey] as? Int,
               let dailyJournal = ckrecord[DayStrings.dailyJournalKey] as? String,

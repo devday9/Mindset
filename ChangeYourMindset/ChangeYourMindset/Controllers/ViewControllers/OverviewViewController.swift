@@ -20,9 +20,9 @@ class OverviewViewController: UIViewController {
     var quotes: [Quote] = []
     var randomQuote: Quote?
     var viewsLaidOut = false
+    var days: Day?
     
     private lazy var boardManager: BLTNItemManager = {
-        
         let item = BLTNPageItem(title: "Challenge Rules")
         item.descriptionText =  "Read 10 pages a day \n\n Drink 1 gallon of water \n\n 45 minute workout \n\n 15 minutes of prayer or medidation \n\n Follow a diet & no cheat meals \n\n No alchol or drugs \n\n Take a daily progress pic"
         
@@ -57,7 +57,7 @@ class OverviewViewController: UIViewController {
         presentBulletinBoard()
     }
     @IBAction func clearAllDataButtonTapped(_ sender: Any) {
-        //        clearAllData(Day, completion: <#T##(Result<Bool, MindsetError>) -> Void#>)
+//        deleteProgress()
     }
     
     //MARK: - Helper Functions
@@ -93,7 +93,6 @@ class OverviewViewController: UIViewController {
     }
 
     func configureCollectionViewLayout() -> UICollectionViewLayout {
-        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -156,7 +155,6 @@ class OverviewViewController: UIViewController {
 
 //MARK: - Extensions
 extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let days = ChallengeController.shared.currentChallenge?.days {
             return days.count

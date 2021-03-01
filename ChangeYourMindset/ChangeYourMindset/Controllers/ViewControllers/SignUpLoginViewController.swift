@@ -110,13 +110,13 @@ class SignUpLoginViewController: UIViewController {
             case .success(_):
                 self.presentOverviewVC()
             case .failure(let error):
+                self.alertUserSignUpError()
                 print(error.errorDescription)
-                // let the user know why something went wrong. Put an alert or 
             }
         }
     }
     
-    //MARK: - Views
+    //MARK: - Setup Views
     func setupNameTextField(){
         usernameTextField.autocapitalizationType = .none
         usernameTextField.returnKeyType = .continue

@@ -59,14 +59,12 @@ class DayViewController: UIViewController {
     }
     
     @objc func keyboardWillAppear(notification: Notification) {
-        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             scrollView.contentOffset = CGPoint(x: 0, y: keyboardSize.height)
         }
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
@@ -130,7 +128,6 @@ extension DayViewController: PhotoSelectorDelegate {
 }//END OF EXTENSION
 
 extension DayViewController: UITableViewDelegate, UITableViewDataSource {
-    
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return self.view.frame.height / 22
         }

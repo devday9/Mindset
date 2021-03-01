@@ -59,7 +59,6 @@ class Task {
 
 //MARK: - Extensions
 extension Task {
-    
     convenience init?(ckRecord: CKRecord) {
         guard let name = ckRecord[TaskStrings.nameKey] as? String,
               let isComplete = ckRecord[TaskStrings.isCompleteKey] as? Bool else { return nil }

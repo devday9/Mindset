@@ -41,7 +41,6 @@ class TaskController {
     }
     
     func save(task: Task, completion: @escaping (Result<Task, MindsetError>) -> Void) {
-        
         let taskRecord = CKRecord(task: task)
         publicDB.save(taskRecord) { (record, error) in
             if let error = error {

@@ -55,7 +55,6 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     func taskComplete() {
-        
         guard let day = day, let index = index, let challenge = ChallengeController.shared.currentChallenge else { return }
         
         day.tasksCompleted[index] = !day.tasksCompleted[index]

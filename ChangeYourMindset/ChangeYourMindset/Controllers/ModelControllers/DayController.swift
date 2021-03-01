@@ -16,7 +16,6 @@ class DayController {
     
     //MARK: - Helper Functions
     func createDays(numberOfDays: Int, completion: @escaping (Result<[Day], MindsetError>) -> Void) {
-        
         guard let challenge = ChallengeController.shared.currentChallenge else { return }
         
         let reference = CKRecord.Reference(recordID: challenge.recordID, action: .deleteSelf)
@@ -32,9 +31,25 @@ class DayController {
         publicDB.add(operation)
     }
     
+    //MARK: - Update
+    func update(_ day: Day, completion: @escaping (Result<Day, MindsetError>) -> Void) {
+        let recordToUpdate = CKRecord(day: day)
+        let operation = CKModifyRecordsOperation(recordsToSave: [recordToUpdate], recordIDsToDelete: nil)
+        operation.savePolicy = .changedKeys
+        operation.qualityOfService = .userInteractive
+        operation.modifyRecordsCompletionBlock = { (records, _, error) in
+            if let error = error {
+                return completion(.failure(.ckError(error)))
+            }
+            guard let record = records?.first,
+                  let updatedDay = Day(ckrecord: record) else { return completion(.failure(.couldNotUnwrap))}
+            completion(.success(updatedDay))
+        }
+        publicDB.add(operation)
+    }
+    
     //MARK: - Fetch
     func fetchAllDays(completion: @escaping (Result<[Day], MindsetError>) -> Void) {
-        
         guard let challenge = ChallengeController.shared.currentChallenge else {
             return completion(.failure(.couldNotUnwrap))}
         // point to challenge not user
@@ -53,23 +68,5 @@ class DayController {
             let sortedDays = fetchedDays.sorted(by: {$0.dayNumber < $1.dayNumber})
             completion(.success(sortedDays))
         }
-    }
-    
-    //MARK: - Update
-    func update(_ day: Day, completion: @escaping (Result<Day, MindsetError>) -> Void) {
-        
-        let recordToUpdate = CKRecord(day: day)
-        let operation = CKModifyRecordsOperation(recordsToSave: [recordToUpdate], recordIDsToDelete: nil)
-        operation.savePolicy = .changedKeys
-        operation.qualityOfService = .userInteractive
-        operation.modifyRecordsCompletionBlock = { (records, _, error) in
-            if let error = error {
-                return completion(.failure(.ckError(error)))
-            }
-            guard let record = records?.first,
-                  let updatedDay = Day(ckrecord: record) else { return completion(.failure(.couldNotUnwrap))}
-            completion(.success(updatedDay))
-        }
-        publicDB.add(operation)
     }
 }//END OF CLASS
