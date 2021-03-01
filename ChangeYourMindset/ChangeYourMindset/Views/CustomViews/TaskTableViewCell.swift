@@ -46,7 +46,6 @@ class TaskTableViewCell: UITableViewCell {
     
     //MARK: - Actions
     @IBAction func completeButtonTapped(_ sender: Any) {
-        //        delegate?.completeButtonTapped(sender: self)
         taskComplete()
     }
     
@@ -56,7 +55,6 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     func taskComplete() {
-        
         guard let day = day, let index = index, let challenge = ChallengeController.shared.currentChallenge else { return }
         
         day.tasksCompleted[index] = !day.tasksCompleted[index]

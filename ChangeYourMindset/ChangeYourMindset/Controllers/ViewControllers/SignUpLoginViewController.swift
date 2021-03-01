@@ -110,19 +110,19 @@ class SignUpLoginViewController: UIViewController {
             case .success(_):
                 self.presentOverviewVC()
             case .failure(let error):
+                self.alertUserSignUpError()
                 print(error.errorDescription)
-                // let the user know why something went wrong. Put an alert or 
             }
         }
     }
     
-    //MARK: - Views
+    //MARK: - Setup Views
     func setupNameTextField(){
         usernameTextField.autocapitalizationType = .none
         usernameTextField.returnKeyType = .continue
         usernameTextField.autocorrectionType = .no
         usernameTextField.layer.cornerRadius = 5
-        usernameTextField.addAccentBorder()
+        usernameTextField.addAccentBorderThick()
     }
     
     func setupPasswordTextField(){
@@ -131,7 +131,7 @@ class SignUpLoginViewController: UIViewController {
         enterPasswordTextField.autocorrectionType = .no
         enterPasswordTextField.isSecureTextEntry = true
         enterPasswordTextField.layer.cornerRadius = 5
-        enterPasswordTextField.addAccentBorder()
+        enterPasswordTextField.addAccentBorderThick()
     }
     
     func setupConfirmPasswordTextField(){
@@ -140,14 +140,14 @@ class SignUpLoginViewController: UIViewController {
         confirmPasswordTextField.isSecureTextEntry = true
         confirmPasswordTextField.layer.cornerRadius = 5
         confirmPasswordTextField.returnKeyType = .done
-        confirmPasswordTextField.addAccentBorder()
+        confirmPasswordTextField.addAccentBorderThick()
     }
     
     func setupCreateUserButton() {
         createUserButton.backgroundColor = .darkGray
         createUserButton.layer.cornerRadius = 5
         createUserButton.tintColor = .red
-        createUserButton.addAccentBorder()
+        createUserButton.addAccentBorderThick()
     }
     
     func setupSignUpButton() {

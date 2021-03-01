@@ -37,15 +37,18 @@ class Challenge {
         self.userReference = userReference
     }
     
+//    var currentDay: Day {
+//   let day = // search SO to find how many days from day to day in swift
+//       return days.first(where: { $0.number == day})
+//    }
+    
     var daysSinceStartDate: Int {
         Int(Date().timeIntervalSince(startDate) / (24 * 60 * 60))
-        //        (Date().timeIntervalSince(startDate) / (24 * 60 * 60))
     }
 }//END OF CLASS
 
 //MARK: - Extensions
 extension Challenge {
-    
     convenience init?(ckRecord: CKRecord) {
         guard let title = ckRecord[ChallengeStrings.titleKey] as? String,
               let startDate = ckRecord[ChallengeStrings.startDateKey] as? Date,

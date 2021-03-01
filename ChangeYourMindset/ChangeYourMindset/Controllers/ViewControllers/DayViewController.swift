@@ -59,20 +59,18 @@ class DayViewController: UIViewController {
     }
     
     @objc func keyboardWillAppear(notification: Notification) {
-        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             scrollView.contentOffset = CGPoint(x: 0, y: keyboardSize.height)
         }
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
-    //MARK: - Views
+    //MARK: - Setup Views
     func setupBodyTextView() {
-        bodyTextView.addAccentBorder()
+        bodyTextView.addAccentBorderThick()
         bodyTextView.backgroundColor = .white
         bodyTextView.textColor = .black
         bodyTextView.layer.cornerRadius = 32
@@ -86,7 +84,7 @@ class DayViewController: UIViewController {
     }
     
     func setupContainerView() {
-        containerView.addAccentBorder()
+        containerView.addAccentBorderThick()
         containerView.contentMode = .scaleToFill
         containerView.layer.cornerRadius = 32
         containerView.clipsToBounds = true
@@ -113,11 +111,6 @@ class DayViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    func updateViews() {
-        guard let day = day else { return }
-        
-    }
-    
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPhotoPickerVC" {
@@ -135,7 +128,6 @@ extension DayViewController: PhotoSelectorDelegate {
 }//END OF EXTENSION
 
 extension DayViewController: UITableViewDelegate, UITableViewDataSource {
-    
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return self.view.frame.height / 22
         }

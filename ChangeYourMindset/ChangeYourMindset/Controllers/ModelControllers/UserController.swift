@@ -18,7 +18,6 @@ class UserController {
     
     func createUser(username: String, profilePhoto: UIImage?,
                     completion: @escaping (Result<Bool, MindsetError>) -> Void) {
-        
         fetchAppleUserReference { (result) in
             switch result {
             case .success(let reference):
@@ -58,7 +57,6 @@ class UserController {
     }
     
     func fetchUser(completion: @escaping (Result<User?, MindsetError>) -> Void) {
-        
         fetchAppleUserReference { (result) in
             switch result {
             case .success(let reference):

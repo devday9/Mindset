@@ -19,7 +19,6 @@ class ChallengeController {
     
     //MARK: - CRUD
     func createChallenge(completion: @escaping (Result <Challenge, MindsetError>) -> Void) {
-        
         guard let user = UserController.shared.currentUser else { return completion(.failure(.couldNotUnwrap))}
         
         let reference = CKRecord.Reference(recordID: user.recordID, action: .deleteSelf)
@@ -54,7 +53,6 @@ class ChallengeController {
     
     //MARK: - Fetch
     func fetchChallengesForUser(completion: @escaping (Result<Challenge, MindsetError>) -> Void) {
-       
         guard let user = UserController.shared.currentUser else {
             return completion(.failure(.couldNotUnwrap))}
         
@@ -83,5 +81,25 @@ class ChallengeController {
                 }
             }
         }
+    }
+    
+    //MARK: - Delete
+    func clearAllData(_ days: Day, completion: @escaping (Result<Bool, MindsetError>) -> Void) {
+        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [days.recordID])
+        
+        operation.savePolicy = .changedKeys
+        operation.qualityOfService = .userInteractive
+        operation.modifyRecordsCompletionBlock = { ( _, recordIDs, error) in
+            
+            if let error = error {
+                return completion(.failure(.ckError(error)))
+            }
+            
+            guard let recordIDs = recordIDs else { return completion(.failure(.couldNotUnwrap))}
+            print("\(recordIDs) were removed successfully")
+            completion(.success(true))
+        }
+        
+        publicDB.add(operation)
     }
 }//END OF CLASS

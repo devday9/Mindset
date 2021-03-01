@@ -6,6 +6,7 @@ target 'ChangeYourMindset' do
   use_frameworks!
 
 pod 'BulletinBoard'
+pod 'JGProgressHUD'
 
 end
 

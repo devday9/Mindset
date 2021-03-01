@@ -41,4 +41,31 @@ extension SignUpLoginViewController {
     }
 }//END OF EXTENSION
 
+//MARK: - OverviewVC
+extension OverviewViewController {
+    
+//    func deleteProgress() {
+//        let actionSheet = UIAlertController(title: "HOLD UP!!!", message: "Are you sure you want to DELETE your progress?", preferredStyle: .actionSheet)
+//        actionSheet.addAction(UIAlertAction(title: "Delete Progress", style: .destructive,
+//                                            handler: { [weak self] _ in
+//                                                guard let strongSelf = self else { return }
+//
+//                                                ChallengeController.shared.clearAllData(<#T##days: Day##Day#>) { (result) in
+//                                                    switch result {
+//                                                    case .success():
+//                                                        let storyboard = UIStoryboard(name: "Overview", bundle: nil)
+//                                                    case .failure(_):
+//                                                        let actionSheet = UIAlertController(title: "ERROR", message: "Not able to reset progress at this time", preferredStyle: .alert)
+//                                                        let okayAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+//                                                    }
+//                                                }
+//
+//                                            }))
+//        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//        present(actionSheet, animated: true)
+//    }
+    
+    
+}//END OF EXTENSION
+
 
