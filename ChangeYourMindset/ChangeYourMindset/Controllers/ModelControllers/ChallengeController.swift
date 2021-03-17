@@ -12,9 +12,7 @@ class ChallengeController {
     
     //MARK: - Properties
     let publicDB = CKContainer.default().publicCloudDatabase
-    
     static let shared = ChallengeController()
-    
     var currentChallenge: Challenge?
     
     //MARK: - CRUD
@@ -51,6 +49,14 @@ class ChallengeController {
         }
     }
     
+    //MARK: - Update
+    func updateDay(day: Day) {
+        if let index = currentChallenge?.days.firstIndex(where: { $0.recordID == day.recordID }) {
+            currentChallenge?.days.remove(at: index)
+            currentChallenge?.days.insert(day, at: index)
+        }        
+    }
+    
     //MARK: - Fetch
     func fetchChallengesForUser(completion: @escaping (Result<Challenge, MindsetError>) -> Void) {
         guard let user = UserController.shared.currentUser else {
@@ -74,6 +80,7 @@ class ChallengeController {
                 switch result {
                 case .success(let days):
                     self.currentChallenge?.days = days
+                    
                     completion(.success(fetchedChallenge))
                     
                 case .failure(let error):

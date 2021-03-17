@@ -32,18 +32,26 @@ class DayController {
     }
     
     //MARK: - Update
-    func update(_ day: Day, completion: @escaping (Result<Day, MindsetError>) -> Void) {
+    func update(_ day: Day, completion: ((Result<Day, MindsetError>) -> Void)?) {
         let recordToUpdate = CKRecord(day: day)
         let operation = CKModifyRecordsOperation(recordsToSave: [recordToUpdate], recordIDsToDelete: nil)
         operation.savePolicy = .changedKeys
         operation.qualityOfService = .userInteractive
         operation.modifyRecordsCompletionBlock = { (records, _, error) in
             if let error = error {
-                return completion(.failure(.ckError(error)))
+                completion?(.failure(.ckError(error)))
+                return
             }
             guard let record = records?.first,
-                  let updatedDay = Day(ckrecord: record) else { return completion(.failure(.couldNotUnwrap))}
-            completion(.success(updatedDay))
+                  let updatedDay = Day(ckrecord: record) else
+            {
+                completion?(.failure(.couldNotUnwrap))
+                return
+            }
+            
+            ChallengeController.shared.updateDay(day: day)
+            
+            completion?(.success(updatedDay))
         }
         publicDB.add(operation)
     }
@@ -59,6 +67,7 @@ class DayController {
         publicDB.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 completion(.failure(.ckError(error)))
+                return
             }
             
             guard let records = records else { return completion(.failure(.couldNotUnwrap))}

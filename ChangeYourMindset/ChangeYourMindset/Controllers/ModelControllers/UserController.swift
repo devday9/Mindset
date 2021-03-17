@@ -11,9 +11,7 @@ import CloudKit
 class UserController {
     
     static let shared = UserController()
-    
     var currentUser: User?
-    
     let publicDB = CKContainer.default().publicCloudDatabase
     
     func createUser(username: String, profilePhoto: UIImage?,

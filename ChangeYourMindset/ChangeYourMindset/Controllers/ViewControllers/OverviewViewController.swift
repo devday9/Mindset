@@ -57,7 +57,7 @@ class OverviewViewController: UIViewController {
         presentBulletinBoard()
     }
     @IBAction func clearAllDataButtonTapped(_ sender: Any) {
-//        deleteProgress()
+        deleteProgress()
     }
     
     //MARK: - Helper Functions
@@ -171,13 +171,13 @@ extension OverviewViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         let days = currentChallenge.days
         let day = days[indexPath.row]
-                let dayNotInFuture = day.dayNumber <= currentChallenge.daysSinceStartDate
-        
-                print("\(day) \(dayNotInFuture) \(currentChallenge.daysSinceStartDate) \(currentChallenge.startDate)")
-        
+//                let dayNotInFuture = day.dayNumber <= currentChallenge.daysSinceStartDate
+//
+//                print("\(day) \(dayNotInFuture) \(currentChallenge.daysSinceStartDate) \(currentChallenge.startDate)")
+//
         cell.dayLabel.text = String(day.dayNumber)
-                        cell.isUserInteractionEnabled = dayNotInFuture
-                        cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
+//                        cell.isUserInteractionEnabled = dayNotInFuture
+//                        cell.dayLabel.textColor = dayNotInFuture ? .white : .darkGray
         
         return cell
     }

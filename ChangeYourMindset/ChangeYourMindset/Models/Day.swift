@@ -22,6 +22,7 @@ struct DayStrings {
 class Day {
     let dayNumber: Int
     var dailyJournal: String
+    var tasks: [Task]
     var tasksCompleted: [Bool]
     var allTasksCompleted: Bool {
         var returnValue = true
@@ -62,9 +63,10 @@ class Day {
         }
     }
     
-    init(dayNumber: Int, dailyJournal: String = "", tasksCompleted: [Bool] = [false, false, false, false, false, false, false], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), challengeReference: CKRecord.Reference, dailyProgressPhoto: UIImage? = nil) {
+    init(dayNumber: Int, dailyJournal: String = "", tasks: [Task] = [], tasksCompleted: [Bool] = [false, false, false, false, false, false, false], recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), challengeReference: CKRecord.Reference, dailyProgressPhoto: UIImage? = nil) {
         self.dayNumber = dayNumber
         self.dailyJournal = dailyJournal
+        self.tasks = tasks
         self.tasksCompleted = tasksCompleted
         self.recordID = recordID
         self.challengeReference = challengeReference
@@ -90,8 +92,8 @@ extension Day {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
             }
         }
-        
-        self.init(dayNumber: dayNumber, dailyJournal: dailyJournal,tasksCompleted: tasksCompleted, recordID: ckrecord.recordID, challengeReference: challengeReference, dailyProgressPhoto: foundPhoto)
+        print("Day number: \(dayNumber) with id: \(ckrecord.recordID)")
+        self.init(dayNumber: dayNumber, dailyJournal: dailyJournal, tasksCompleted: tasksCompleted, recordID: ckrecord.recordID, challengeReference: challengeReference, dailyProgressPhoto: foundPhoto)
     }
 }//END OF EXTENSION
 

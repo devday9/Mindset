@@ -38,16 +38,26 @@ class DayViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        guard let day = day,
+              let text = bodyTextView.text
+        else { return }
+        day.dailyJournal = text
+        DayController.shared.update(day, completion: nil)
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - Helper Functions
-    func setupViews() {
+    private func setupViews() {
         setupBodyTextView()
         setupContainerView()
         setupTaskTableView()
-        setupDayNumberLabel()
+        populateViews()
         setupBackgroundColor()
         dismissKeyboard()
     }
@@ -69,7 +79,7 @@ class DayViewController: UIViewController {
     }
     
     //MARK: - Setup Views
-    func setupBodyTextView() {
+   private func setupBodyTextView() {
         bodyTextView.addAccentBorderThick()
         bodyTextView.backgroundColor = .white
         bodyTextView.textColor = .black
@@ -83,30 +93,31 @@ class DayViewController: UIViewController {
         bodyTextView.textContainerInset.right = 12
     }
     
-    func setupContainerView() {
+    private func setupContainerView() {
         containerView.addAccentBorderThick()
         containerView.contentMode = .scaleToFill
         containerView.layer.cornerRadius = 32
         containerView.clipsToBounds = true
     }
     
-    func setupTaskTableView() {
+    private func setupTaskTableView() {
         taskTableView.backgroundColor = .white
         taskTableView.isScrollEnabled = false
     }
     
-    func setupDayNumberLabel() {
+    private func populateViews() {
         guard let day = day else
         { return }
         
         dayNumberLabel.text = "Day \(day.dayNumber)"
+        bodyTextView.text = day.dailyJournal
     }
     
-    func setupBackgroundColor() {
+   private func setupBackgroundColor() {
         view.backgroundColor = .white
     }
     
-    func dismissKeyboard() {
+    private func dismissKeyboard() {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
@@ -128,18 +139,16 @@ extension DayViewController: PhotoSelectorDelegate {
 }//END OF EXTENSION
 
 extension DayViewController: UITableViewDelegate, UITableViewDataSource {
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return self.view.frame.height / 22
-        }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.view.frame.height / 22
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TaskController.shared.tasks.count
+   return day.task
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskTableViewCell else { return UITableViewCell() }
-        
-//        cell.delegate = self
         
         guard let day = ChallengeController.shared.currentChallenge?.days[indexPath.row] else { return UITableViewCell() }
         
@@ -149,12 +158,3 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }//END OF EXTENSION
-
-//extension DayViewController: TaskCellDelegate {
-//    func completeButtonTapped(sender: TaskTableViewCell) {
-//        guard let task = sender.task else { return }
-//        TaskController.shared.toggleComplete(task: task)
-//
-//        sender.task = task
-//    }
-//}//END OF EXTENSION

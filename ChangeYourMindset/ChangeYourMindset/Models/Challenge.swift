@@ -37,10 +37,10 @@ class Challenge {
         self.userReference = userReference
     }
     
-//    var currentDay: Day {
-//   let day = // search SO to find how many days from day to day in swift
-//       return days.first(where: { $0.number == day})
-//    }
+    var currentDay: Day {
+        let day = 
+        return days.first(where: { $0.dayNumber == day})!
+    }
     
     var daysSinceStartDate: Int {
         Int(Date().timeIntervalSince(startDate) / (24 * 60 * 60))
@@ -75,5 +75,11 @@ extension CKRecord {
             ChallengeStrings.isCompleteKey : challenge.isComplete,
             ChallengeStrings.userReferenceKey : challenge.userReference
         ])
+    }
+}//END OF EXTENSION
+
+extension Date {
+    func days(from date: Date) -> Int {
+        return Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0
     }
 }//END OF EXTENSION

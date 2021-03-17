@@ -106,12 +106,14 @@ class SignUpLoginViewController: UIViewController {
         }
         
         UserController.shared.createUser(username: username, profilePhoto: image) { (result) in
-            switch result {
-            case .success(_):
-                self.presentOverviewVC()
-            case .failure(let error):
-                self.alertUserSignUpError()
-                print(error.errorDescription)
+            DispatchQueue.main.async {
+                switch result {
+                case .success(_):
+                    self.presentOverviewVC()
+                case .failure(let error):
+                    self.alertUserSignUpError()
+                    print(error.errorDescription)
+                }
             }
         }
     }

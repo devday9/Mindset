@@ -21,6 +21,7 @@ class LaunchScreenCopyViewController: UIViewController {
             switch result {
             case .success(let user):
                 if user != nil {
+                    // Step 1 Check if challenge.currentday has tasks, if not create them. 
                     self.presentOverviewVC()
                 } else {
                     self.presentSignUpVC()
